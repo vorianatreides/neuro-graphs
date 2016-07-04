@@ -3,9 +3,12 @@ var clean 			= require('gulp-clean');
 var mocha 			= require('gulp-mocha');
 var ts 					= require('gulp-typescript');
 var tdoc 				= require("gulp-typedoc");
-var browserify 	= require('gulp-browserify');
 var concat			= require('gulp-concat');
 var merge 			= require('merge2');
+var webpack 		= require('webpack-stream');
+var uglify 			= require('gulp-uglify');
+var rename 			= require('gulp-rename');
+var istanbul 		= require('gulp-istanbul');
 
 
 //----------------------------
@@ -50,15 +53,23 @@ gulp.task('dist', ['clean', 'tdoc'], function () {
 	]);
 });
 
-// Packaging - Browser
-gulp.task('browserify', ['dist'], function() {
-	// Single entry point to browserify 
-	gulp.src('./index.js')
-		.pipe(browserify({
-		  insertGlobals : false
-		}))
-		.pipe(gulp.dest('./build/graphinius'))
+
+// Packaging - Webpack
+gulp.task('pack', ['dist'], function() {
+	return gulp.src('./index.js')
+		.pipe(webpack( require('./webpack.config.js') ))
+		.pipe(gulp.dest('build/'));
 });
+
+
+// Uglification...
+gulp.task('bundle', ['pack'], function() {
+	return gulp.src('build/neuro-graphs.js')
+		.pipe(uglify())
+		.pipe(rename('neuro-graphs.min.js'))
+		.pipe(gulp.dest('build'));
+});
+
 
 // Documentation (type doc)
 gulp.task("tdoc", function() {
@@ -73,6 +84,7 @@ gulp.task("tdoc", function() {
         }))
     ;
 });
+
 
 gulp.task('test', ['build'], function () {
 	return gulp.src(paths.tests, {read: false})
