@@ -2,7 +2,8 @@
 "use strict";
 var chai = require('chai');
 var Neuron = require('../../src/neurons/Neuron');
-var $G = require('graphinius').$G;
+var $G = require('graphinius');
+console.log($G);
 var expect = chai.expect;
 describe('NEURON TESTS', function () {
     it('should test the successful graphinius import', function () {
