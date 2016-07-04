@@ -2,7 +2,8 @@
 
 import * as chai from 'chai';
 import * as Neuron from '../src/neurons/Neuron';
-import $G = require('graphinius');
+import * as $G from 'graphinius';
+console.log($G);
 
 var expect = chai.expect;
 
@@ -16,7 +17,7 @@ var e_1: $G.core.IBaseEdge,
     e_3: $G.core.IBaseEdge, 
     e_4: $G.core.IBaseEdge;
 
-describe('NEURON TESTS', () => {
+describe('GRAPHINIUS IMPORT TESTS', () => {
   
   it('should test the successful graphinius import', () => {
     expect( Neuron.neuron ).to.equal("Neuron!");

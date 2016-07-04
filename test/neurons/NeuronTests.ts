@@ -4,7 +4,6 @@ import * as chai from 'chai';
 import * as Neuron from '../../src/neurons/Neuron';
 
 import * as $G from 'graphinius';
-console.log($G);
 
 var expect = chai.expect;
 

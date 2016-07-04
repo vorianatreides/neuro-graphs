@@ -26,7 +26,7 @@ var paths = {
 var tsProject = ts.createProject({
 	target: "ES5",
 	module: "commonjs",
-	declaration: true,
+	declaration: false,
 	noExternalResolve: false
 });
 
@@ -47,8 +47,8 @@ gulp.task('dist', ['clean', 'tdoc'], function () {
 	// Merge the two output streams, so this task is finished  
 	// when the IO of both operations are done.
 	return merge([ 
-		tsResult.dts.pipe(concat('graphinius.d.ts'))
-								.pipe(gulp.dest('.')),		
+		// tsResult.dts.pipe(concat('graphinius.d.ts'))
+		// 						.pipe(gulp.dest('.')),		
 		tsResult.js.pipe(gulp.dest('./dist/'))
 	]);
 });
