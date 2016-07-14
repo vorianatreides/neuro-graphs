@@ -3,7 +3,7 @@
 import * as chai from 'chai';
 import * as Neuron from '../src/neurons/Neuron';
 import * as $G from 'graphinius';
-console.log($G);
+// console.log($G);
 
 var expect = chai.expect;
 
@@ -12,7 +12,7 @@ var n_a: $G.core.IBaseNode,
     n_b: $G.core.IBaseNode, 
     n_c: $G.core.IBaseNode, 
     n_d: $G.core.IBaseNode;
-var e_1: $G.core.IBaseEdge, 
+var e_1: $G.core.IBaseEdge,
     e_2: $G.core.IBaseEdge, 
     e_3: $G.core.IBaseEdge, 
     e_4: $G.core.IBaseEdge;
@@ -48,5 +48,15 @@ describe('GRAPHINIUS IMPORT TESTS', () => {
     var pfs_res = $G.search.PFS(graph, n_a);
   });
   
+  
+  it('should import a graph from a valid json file', () => {
+    var json_file = "./input_data/neuro_dd6_mi.json";
+    var jsonReader = new $G.input.JSONInput(true, false, true);
+    
+    var neuro_graph = jsonReader.readFromJSONFile(json_file);
+    // console.log(neuro_graph.degreeDistribution().all);
+    // console.log(neuro_graph.getStats());
+    expect(neuro_graph.nrNodes()).to.equal(299);
+  });
   
 });
