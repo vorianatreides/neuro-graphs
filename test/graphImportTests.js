@@ -3,7 +3,6 @@
 var chai = require('chai');
 var Neuron = require('../src/neurons/Neuron');
 var $G = require('graphinius');
-// console.log($G);
 var $C = require('./neuro_dd6_mi');
 //import * as $C from './abc';
 var connectome = JSON.parse(JSON.stringify($C.CONFIG));
@@ -49,7 +48,6 @@ describe('GRAPHINIUS IMPORT TESTS', function () {
         //expect(neuro_graph.nrNodes()).to.equal(299);
         //expect(neuro_graph.nrNodes()).to.equal(4);
         var all_nodes = neuro_graph.getNodes();
-        var fs = require('fs');
         //    fs.writeFile ("./wow.txt", "Hallo!");
         //    fs.appendFile ("./wow.txt", " Und jetzt?");
         //fs.writeFile ("./degreeDistribution.txt", neuro_graph.degreeDistribution().all);

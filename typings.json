@@ -1,5 +1,6 @@
 {
   "globalDependencies": {
+    "node": "registry:env/node#6.0.0+20160918225031",
     "require": "registry:dt/require#2.1.20+20160316155526"
   }
 }

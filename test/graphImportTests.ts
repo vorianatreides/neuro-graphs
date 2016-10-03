@@ -4,6 +4,7 @@ import * as chai from 'chai';
 import * as Neuron from '../src/neurons/Neuron';
 import * as $G from 'graphinius';
 // console.log($G);
+import * as fs from 'fs';
 
 import * as $C from './neuro_dd6_mi';
 //import * as $C from './abc';
@@ -67,7 +68,6 @@ describe('GRAPHINIUS IMPORT TESTS', () => {
     //expect(neuro_graph.nrNodes()).to.equal(4);
 
     let all_nodes = neuro_graph.getNodes();
-    var fs = require ('fs');
 //    fs.writeFile ("./wow.txt", "Hallo!");
 //    fs.appendFile ("./wow.txt", " Und jetzt?");
     //fs.writeFile ("./degreeDistribution.txt", neuro_graph.degreeDistribution().all);
