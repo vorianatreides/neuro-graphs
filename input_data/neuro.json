@@ -1,7 +1,7 @@
 {
-  "name": "Neuro graph test scenario",
-  "nodes": 299,
-  "edges": "2836",
+  "name": "Neuro-muscle graph test scenario",
+  "nodes": 397,
+  "edges": 3400,
   "data": {
     "ADAL": {
       "type": "interneuron",
@@ -360,6 +360,11 @@
         },
         {
           "to": "URBL",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL05",
           "directed": true,
           "weight": 1
         }
@@ -2321,6 +2326,26 @@
           "to": "VD2",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDL05",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR05",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDL08",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR08",
+          "directed": true,
+          "weight": 4
         }
       ]
     },
@@ -2345,6 +2370,26 @@
           "to": "AVAR",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDL20",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR20",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL19",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR19",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -2379,6 +2424,46 @@
           "to": "VD13",
           "directed": true,
           "weight": 2
+        },
+        {
+          "to": "MDL21",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL22",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL23",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL24",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR21",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR22",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR23",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR24",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -2418,6 +2503,26 @@
           "to": "VD2",
           "directed": true,
           "weight": 10
+        },
+        {
+          "to": "MDL08",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR08",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDL07",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR07",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -2472,6 +2577,26 @@
           "to": "VD3",
           "directed": true,
           "weight": 15
+        },
+        {
+          "to": "MDL10",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR10",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDL09",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR09",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -2501,6 +2626,26 @@
           "to": "VD4",
           "directed": true,
           "weight": 11
+        },
+        {
+          "to": "MDL12",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR12",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL11",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR11",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -2540,6 +2685,26 @@
           "to": "VD5",
           "directed": true,
           "weight": 9
+        },
+        {
+          "to": "MDL11",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR11",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL14",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR14",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -2584,6 +2749,26 @@
           "to": "VD6",
           "directed": true,
           "weight": 13
+        },
+        {
+          "to": "MDL14",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR14",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL13",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR13",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -2618,6 +2803,26 @@
           "to": "AVBR",
           "directed": false,
           "weight": 2
+        },
+        {
+          "to": "MDL13",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR13",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL16",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR16",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -2641,6 +2846,26 @@
         {
           "to": "AVAR",
           "directed": false,
+          "weight": 3
+        },
+        {
+          "to": "MDL15",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR15",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL18",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR18",
+          "directed": true,
           "weight": 3
         }
       ]
@@ -2676,6 +2901,26 @@
           "to": "DVB",
           "directed": false,
           "weight": 7
+        },
+        {
+          "to": "MDL20",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR20",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDL17",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR17",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -5448,6 +5693,16 @@
           "to": "VB1",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MVL12",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL11",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -5542,6 +5797,16 @@
           "to": "VD11",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MVL14",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MVR14",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -6340,6 +6605,11 @@
           "to": "SMDDR",
           "directed": true,
           "weight": 2
+        },
+        {
+          "to": "MVL10",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -6358,27 +6628,27 @@
         {
           "to": "AVEL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AVFR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "DA2",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "DD1",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "DD6",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "DVB",
@@ -6393,7 +6663,7 @@
         {
           "to": "HSNR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "PVM",
@@ -6403,32 +6673,42 @@
         {
           "to": "PVPR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "PVWL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "SABD",
           "directed": true,
-          "weight": 5
+          "weight": -5
         },
         {
           "to": "SABVL",
           "directed": true,
-          "weight": 4
+          "weight": -4
         },
         {
           "to": "SABVR",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "VD12",
           "directed": true,
-          "weight": 4
+          "weight": -4
+        },
+        {
+          "to": "MVL10",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVR10",
+          "directed": true,
+          "weight": -5
         }
       ]
     },
@@ -7068,42 +7348,42 @@
         {
           "to": "ADEL",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "AVHL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AVJR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "HSNL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "PVNL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "PVNR",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "SAADL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "URADL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         }
       ]
     },
@@ -7122,57 +7402,57 @@
         {
           "to": "ADER",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "ALMR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AVAL",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "AVHL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AVJL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "HSNR",
           "directed": true,
-          "weight": 4
+          "weight": -4
         },
         {
           "to": "PVCL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "PVNL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "PVNR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "SDQL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "URADR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         }
       ]
     },
@@ -7490,6 +7770,11 @@
           "to": "URAVL",
           "directed": true,
           "weight": 2
+        },
+        {
+          "to": "MVL03",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -7584,6 +7869,11 @@
           "to": "URAVR",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MVR04",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -7638,6 +7928,16 @@
           "to": "VD2",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MDL08",
+          "directed": true,
+          "weight": 8
+        },
+        {
+          "to": "MDR08",
+          "directed": true,
+          "weight": 8
         }
       ]
     },
@@ -7702,6 +8002,46 @@
           "to": "VD3",
           "directed": true,
           "weight": 5
+        },
+        {
+          "to": "MDL07",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL08",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL09",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL10",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR07",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR08",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR09",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR10",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -7756,6 +8096,36 @@
           "to": "VD4",
           "directed": true,
           "weight": 6
+        },
+        {
+          "to": "MDL09",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MDL10",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MDL12",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MDR09",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MDR10",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MDR12",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -7820,6 +8190,36 @@
           "to": "VD5",
           "directed": true,
           "weight": 15
+        },
+        {
+          "to": "MDL11",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL12",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL14",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MDR11",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR12",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR14",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -7874,6 +8274,26 @@
           "to": "VD6",
           "directed": true,
           "weight": 16
+        },
+        {
+          "to": "MDL13",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MDL14",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR13",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MDR14",
+          "directed": true,
+          "weight": 4
         }
       ]
     },
@@ -7913,6 +8333,56 @@
           "to": "VD6",
           "directed": true,
           "weight": 3
+        },
+        {
+          "to": "MDL11",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MDL12",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL13",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL14",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL16",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR11",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR12",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR13",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR14",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR16",
+          "directed": true,
+          "weight": 4
         }
       ]
     },
@@ -7932,6 +8402,36 @@
           "to": "AVAL",
           "directed": false,
           "weight": 2
+        },
+        {
+          "to": "MDL15",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL17",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL18",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR15",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR17",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR18",
+          "directed": true,
+          "weight": 4
         }
       ]
     },
@@ -7956,6 +8456,36 @@
           "to": "DA9",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDL17",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL19",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL20",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR17",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR19",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR20",
+          "directed": true,
+          "weight": 4
         }
       ]
     },
@@ -8000,6 +8530,56 @@
           "to": "VD13",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MDL19",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL21",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL22",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL23",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL24",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR19",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR21",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR22",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR23",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR24",
+          "directed": true,
+          "weight": 4
         }
       ]
     },
@@ -8094,6 +8674,26 @@
           "to": "VD3",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MDL07",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL08",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR07",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR08",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -8153,6 +8753,46 @@
           "to": "VD5",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MDL09",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDL10",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDL11",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDL12",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR09",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR10",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR11",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR12",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -8227,6 +8867,46 @@
           "to": "VD6",
           "directed": true,
           "weight": 7
+        },
+        {
+          "to": "MDL11",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDL12",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDL13",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDL14",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR11",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR12",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR13",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR14",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -8281,6 +8961,36 @@
           "to": "VD6",
           "directed": true,
           "weight": 13
+        },
+        {
+          "to": "MDL13",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL14",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL16",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR13",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR14",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR16",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -8310,6 +9020,36 @@
           "to": "AVBR",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDL15",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL17",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL18",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR15",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR17",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR18",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -8339,6 +9079,36 @@
           "to": "AVBR",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDL17",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL19",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL20",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR17",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR19",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR20",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -8368,6 +9138,56 @@
           "to": "VD13",
           "directed": true,
           "weight": 2
+        },
+        {
+          "to": "MDL19",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL21",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL22",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL23",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL24",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR19",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR21",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR22",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR23",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR24",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -8391,7 +9211,7 @@
         {
           "to": "DA2",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "DD2",
@@ -8406,12 +9226,52 @@
         {
           "to": "VD2",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VD2",
           "directed": false,
           "weight": 2
+        },
+        {
+          "to": "MDL07",
+          "directed": true,
+          "weight": -4
+        },
+        {
+          "to": "MDL08",
+          "directed": true,
+          "weight": -4
+        },
+        {
+          "to": "MDL09",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDL10",
+          "directed": true,
+          "weight": -4
+        },
+        {
+          "to": "MDR07",
+          "directed": true,
+          "weight": -4
+        },
+        {
+          "to": "MDR08",
+          "directed": true,
+          "weight": -4
+        },
+        {
+          "to": "MDR09",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR10",
+          "directed": true,
+          "weight": -4
         }
       ]
     },
@@ -8430,7 +9290,7 @@
         {
           "to": "DA3",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "DD1",
@@ -8445,17 +9305,47 @@
         {
           "to": "VD3",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VD4",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VD4",
           "directed": false,
           "weight": 2
+        },
+        {
+          "to": "MDL09",
+          "directed": true,
+          "weight": -4
+        },
+        {
+          "to": "MDL11",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDL12",
+          "directed": true,
+          "weight": -4
+        },
+        {
+          "to": "MDR09",
+          "directed": true,
+          "weight": -4
+        },
+        {
+          "to": "MDR11",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR12",
+          "directed": true,
+          "weight": -4
         }
       ]
     },
@@ -8480,6 +9370,36 @@
           "to": "DD4",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDL11",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDL13",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MDL14",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR11",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR13",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MDR14",
+          "directed": true,
+          "weight": -5
         }
       ]
     },
@@ -8509,6 +9429,36 @@
           "to": "VD8",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDL13",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDL15",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDL16",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR13",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR15",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR16",
+          "directed": true,
+          "weight": -5
         }
       ]
     },
@@ -8527,7 +9477,7 @@
         {
           "to": "VB8",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VD10",
@@ -8537,7 +9487,37 @@
         {
           "to": "VD9",
           "directed": true,
-          "weight": 1
+          "weight": -1
+        },
+        {
+          "to": "MDL17",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDL18",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDL20",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR17",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR18",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR20",
+          "directed": true,
+          "weight": -5
         }
       ]
     },
@@ -8553,6 +9533,56 @@
         "z": -16.475
       },
       "edges": [
+        {
+          "to": "MDL19",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDL21",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDL22",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDL23",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDL24",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR19",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR21",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR22",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR23",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDR24",
+          "directed": true,
+          "weight": -5
+        }
       ]
     },
     "DVA": {
@@ -8570,32 +9600,32 @@
         {
           "to": "AIZL",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "AQR",
           "directed": true,
-          "weight": 4
+          "weight": -4
         },
         {
           "to": "AUAL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AUAR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AVAL",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "AVAR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AVBL",
@@ -8605,7 +9635,7 @@
         {
           "to": "AVBL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AVBR",
@@ -8615,12 +9645,12 @@
         {
           "to": "AVEL",
           "directed": true,
-          "weight": 9
+          "weight": -9
         },
         {
           "to": "AVER",
           "directed": true,
-          "weight": 5
+          "weight": -5
         },
         {
           "to": "DB1",
@@ -8630,37 +9660,37 @@
         {
           "to": "DB2",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "DB3",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "DB4",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "DB5",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "DB6",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "DB7",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "PDEL",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "PVCL",
@@ -8670,17 +9700,17 @@
         {
           "to": "PVCL",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "PVCR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "PVR",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "PVR",
@@ -8690,82 +9720,82 @@
         {
           "to": "RIAL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIAR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIMR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIR",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "SAADR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "SAAVL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "SAAVR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "SABD",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "SMBDL",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "SMBDR",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "SMBVL",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "SMBVR",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "VA12",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VA2",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VB1",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VB11",
           "directed": true,
-          "weight": 2
+          "weight": -2
         }
       ]
     },
@@ -8794,37 +9824,37 @@
         {
           "to": "AVL",
           "directed": true,
-          "weight": 5
+          "weight": -5
         },
         {
           "to": "DA8",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "DD6",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "DVC",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "PDA",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "PHCL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "PVPL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VA9",
@@ -8835,6 +9865,11 @@
           "to": "VB9",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MANAL",
+          "directed": true,
+          "weight": -5
         }
       ]
     },
@@ -8858,7 +9893,7 @@
         {
           "to": "AIBL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AIBR",
@@ -8868,32 +9903,32 @@
         {
           "to": "AIBR",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "AVAL",
           "directed": true,
-          "weight": 5
+          "weight": -5
         },
         {
           "to": "AVAR",
           "directed": true,
-          "weight": 7
+          "weight": -7
         },
         {
           "to": "AVBL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AVKL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "AVKR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AVL",
@@ -8913,37 +9948,37 @@
         {
           "to": "PVT",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIBL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIBR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIGL",
           "directed": true,
-          "weight": 5
+          "weight": -5
         },
         {
           "to": "RIGR",
           "directed": true,
-          "weight": 5
+          "weight": -5
         },
         {
           "to": "RMFL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "RMFR",
           "directed": true,
-          "weight": 4
+          "weight": -4
         },
         {
           "to": "VA9",
@@ -9261,6 +10296,11 @@
           "to": "VC5",
           "directed": true,
           "weight": 3
+        },
+        {
+          "to": "MVULVA",
+          "directed": true,
+          "weight": 7
         }
       ]
     },
@@ -9410,6 +10450,11 @@
           "to": "VD4",
           "directed": true,
           "weight": 2
+        },
+        {
+          "to": "MVULVA",
+          "directed": true,
+          "weight": 6
         }
       ]
     },
@@ -9796,6 +10841,21 @@
           "to": "URYDL",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MDL01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL02",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL04",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -9840,6 +10900,16 @@
           "to": "RMEV",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDR01",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MDR02",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -9904,6 +10974,31 @@
           "to": "RMER",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MDL01",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDL03",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDL05",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVL01",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MVL03",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -9988,6 +11083,26 @@
           "to": "URXR",
           "directed": true,
           "weight": 2
+        },
+        {
+          "to": "MDR01",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR03",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MVR01",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MVR03",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -10037,6 +11152,16 @@
           "to": "URYVL",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MVL01",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL02",
+          "directed": true,
+          "weight": 4
         }
       ]
     },
@@ -10091,6 +11216,16 @@
           "to": "RMER",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MVR01",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR02",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -10461,6 +11596,11 @@
           "to": "VD1",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MVULVA",
+          "directed": true,
+          "weight": 6
         }
       ]
     },
@@ -10560,6 +11700,11 @@
           "to": "VD6",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MVULVA",
+          "directed": true,
+          "weight": 10
         }
       ]
     },
@@ -10694,6 +11839,11 @@
           "to": "VD7",
           "directed": true,
           "weight": 5
+        },
+        {
+          "to": "MVULVA",
+          "directed": true,
+          "weight": 11
         }
       ]
     },
@@ -10748,6 +11898,11 @@
           "to": "VC5",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MVULVA",
+          "directed": true,
+          "weight": 7
         }
       ]
     },
@@ -10817,6 +11972,30 @@
           "to": "VC4",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MVULVA",
+          "directed": true,
+          "weight": 2
+        }
+      ]
+    },
+    "VC6": {
+      "type": "Motor Neuron",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": -1.8249999,
+        "y": 174.175,
+        "z": 1.0
+      },
+      "edges": [
+        {
+          "to": "MVULVA",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -10835,7 +12014,7 @@
         {
           "to": "DD1",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "DD1",
@@ -10865,7 +12044,7 @@
         {
           "to": "VA1",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "VA2",
@@ -10881,6 +12060,26 @@
           "to": "VD2",
           "directed": false,
           "weight": 7
+        },
+        {
+          "to": "MVL05",
+          "directed": true,
+          "weight": -3
+        },
+        {
+          "to": "MVL08",
+          "directed": true,
+          "weight": -3
+        },
+        {
+          "to": "MVR05",
+          "directed": true,
+          "weight": -3
+        },
+        {
+          "to": "MVR08",
+          "directed": true,
+          "weight": -3
         }
       ]
     },
@@ -10909,7 +12108,7 @@
         {
           "to": "DD5",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "DVC",
@@ -10919,12 +12118,32 @@
         {
           "to": "VB9",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "VD9",
           "directed": false,
           "weight": 5
+        },
+        {
+          "to": "MVL17",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVL20",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVR17",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVR20",
+          "directed": true,
+          "weight": -6
         }
       ]
     },
@@ -10943,17 +12162,37 @@
         {
           "to": "AVAR",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "VA11",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VB10",
           "directed": true,
-          "weight": 1
+          "weight": -1
+        },
+        {
+          "to": "MVL19",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVL20",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVR19",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVR20",
+          "directed": true,
+          "weight": -6
         }
       ]
     },
@@ -10972,22 +12211,42 @@
         {
           "to": "VA11",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "VA12",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "VB10",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VB11",
           "directed": true,
-          "weight": 1
+          "weight": -1
+        },
+        {
+          "to": "MVL19",
+          "directed": true,
+          "weight": -3
+        },
+        {
+          "to": "MVL21",
+          "directed": true,
+          "weight": -3
+        },
+        {
+          "to": "MVR19",
+          "directed": true,
+          "weight": -3
+        },
+        {
+          "to": "MVR22",
+          "directed": true,
+          "weight": -3
         }
       ]
     },
@@ -11006,17 +12265,17 @@
         {
           "to": "AVAR",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "PVCL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "PVCR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "PVPL",
@@ -11026,7 +12285,42 @@
         {
           "to": "VA12",
           "directed": true,
-          "weight": 1
+          "weight": -1
+        },
+        {
+          "to": "MVL21",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVL22",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVL23",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVR21",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVR22",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVR23",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVR24",
+          "directed": true,
+          "weight": -6
         }
       ]
     },
@@ -11050,7 +12344,7 @@
         {
           "to": "DD1",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "DD1",
@@ -11065,12 +12359,12 @@
         {
           "to": "VA2",
           "directed": true,
-          "weight": 6
+          "weight": -6
         },
         {
           "to": "VB2",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "VD1",
@@ -11081,6 +12375,26 @@
           "to": "VD3",
           "directed": false,
           "weight": 2
+        },
+        {
+          "to": "MVL07",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVL10",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVR07",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVR10",
+          "directed": true,
+          "weight": -5
         }
       ]
     },
@@ -11104,12 +12418,12 @@
         {
           "to": "VA3",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "VB2",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "VD2",
@@ -11120,6 +12434,26 @@
           "to": "VD4",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MVL09",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVL12",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVR09",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVR12",
+          "directed": true,
+          "weight": -5
         }
       ]
     },
@@ -11154,6 +12488,26 @@
           "to": "VD5",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MVL11",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVL12",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVR11",
+          "directed": true,
+          "weight": -6
+        },
+        {
+          "to": "MVR12",
+          "directed": true,
+          "weight": -6
         }
       ]
     },
@@ -11172,7 +12526,7 @@
         {
           "to": "AVAR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "PVPR",
@@ -11182,12 +12536,12 @@
         {
           "to": "VA5",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "VB4",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "VD4",
@@ -11198,6 +12552,16 @@
           "to": "VD6",
           "directed": false,
           "weight": 2
+        },
+        {
+          "to": "MVL14",
+          "directed": true,
+          "weight": -13
+        },
+        {
+          "to": "MVR14",
+          "directed": true,
+          "weight": -13
         }
       ]
     },
@@ -11216,17 +12580,17 @@
         {
           "to": "AVAL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VA6",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VB5",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "VD5",
@@ -11237,6 +12601,36 @@
           "to": "VD7",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MVL13",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVL14",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVL16",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVR13",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVR14",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVR16",
+          "directed": true,
+          "weight": -5
         }
       ]
     },
@@ -11261,6 +12655,31 @@
           "to": "VD6",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MVL15",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVL16",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVR15",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVR16",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVULVA",
+          "directed": true,
+          "weight": -5
         }
       ]
     },
@@ -11284,7 +12703,7 @@
         {
           "to": "DD4",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VA8",
@@ -11294,7 +12713,17 @@
         {
           "to": "VA8",
           "directed": true,
-          "weight": 4
+          "weight": -4
+        },
+        {
+          "to": "MVL15",
+          "directed": true,
+          "weight": -12
+        },
+        {
+          "to": "MVR15",
+          "directed": true,
+          "weight": -12
         }
       ]
     },
@@ -11319,6 +12748,26 @@
           "to": "VD10",
           "directed": false,
           "weight": 5
+        },
+        {
+          "to": "MVL17",
+          "directed": true,
+          "weight": -7
+        },
+        {
+          "to": "MVL18",
+          "directed": true,
+          "weight": -7
+        },
+        {
+          "to": "MVR17",
+          "directed": true,
+          "weight": -7
+        },
+        {
+          "to": "MVR18",
+          "directed": true,
+          "weight": -7
         }
       ]
     },
@@ -12099,25 +13548,6 @@
         }
       ]
     },
-    "MI": {
-      "type": "interneuron",
-      "features": {
-        "foo": "bar",
-        "true": true
-      },
-      "coords": {
-        "x": -2.1539998,
-        "y": -293.51202,
-        "z": 56.707
-      },
-      "edges": [
-        {
-          "to": "M2R",
-          "directed": false,
-          "weight": 1
-        }
-      ]
-    },
     "NSML": {
       "type": "PolymodalNeuron",
       "features": {
@@ -12756,6 +14186,11 @@
           "to": "VD13",
           "directed": true,
           "weight": 3
+        },
+        {
+          "to": "MDL21",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -12785,6 +14220,16 @@
           "to": "VD13",
           "directed": true,
           "weight": 2
+        },
+        {
+          "to": "MVL22",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR21",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -14221,6 +15666,11 @@
           "to": "RIFL",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MVL09",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -14350,6 +15800,16 @@
           "to": "VD7",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MVL12",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL13",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -15125,77 +16585,77 @@
         {
           "to": "CEPVL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIAR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIVL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "RIVR",
           "directed": true,
-          "weight": 4
+          "weight": -4
         },
         {
           "to": "RMDDL",
           "directed": true,
-          "weight": 12
+          "weight": -12
         },
         {
           "to": "RMDDR",
           "directed": true,
-          "weight": 7
+          "weight": -7
         },
         {
           "to": "RMDL",
           "directed": true,
-          "weight": 6
+          "weight": -6
         },
         {
           "to": "RMDR",
           "directed": true,
-          "weight": 6
+          "weight": -6
         },
         {
           "to": "RMDVL",
           "directed": true,
-          "weight": 9
+          "weight": -9
         },
         {
           "to": "RMDVR",
           "directed": true,
-          "weight": 11
+          "weight": -11
         },
         {
           "to": "SIADL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "SMDDL",
           "directed": true,
-          "weight": 8
+          "weight": -8
         },
         {
           "to": "SMDDR",
           "directed": true,
-          "weight": 10
+          "weight": -10
         },
         {
           "to": "SMDVL",
           "directed": true,
-          "weight": 6
+          "weight": -6
         },
         {
           "to": "SMDVR",
           "directed": true,
-          "weight": 11
+          "weight": -11
         }
       ]
     },
@@ -15214,92 +16674,92 @@
         {
           "to": "CEPVR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "IL1R",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIAL",
           "directed": true,
-          "weight": 4
+          "weight": -4
         },
         {
           "to": "RIVL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RMDDL",
           "directed": true,
-          "weight": 10
+          "weight": -10
         },
         {
           "to": "RMDDR",
           "directed": true,
-          "weight": 11
+          "weight": -11
         },
         {
           "to": "RMDL",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "RMDR",
           "directed": true,
-          "weight": 8
+          "weight": -8
         },
         {
           "to": "RMDVL",
           "directed": true,
-          "weight": 12
+          "weight": -12
         },
         {
           "to": "RMDVR",
           "directed": true,
-          "weight": 10
+          "weight": -10
         },
         {
           "to": "SAADR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "SIADL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "SIADR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "SIAVL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "SMDDL",
           "directed": true,
-          "weight": 7
+          "weight": -7
         },
         {
           "to": "SMDDR",
           "directed": true,
-          "weight": 7
+          "weight": -7
         },
         {
           "to": "SMDVL",
           "directed": true,
-          "weight": 13
+          "weight": -13
         },
         {
           "to": "SMDVR",
           "directed": true,
-          "weight": 7
+          "weight": -7
         }
       ]
     },
@@ -15764,12 +17224,12 @@
         {
           "to": "ALA",
           "directed": false,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AS2",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AVBL",
@@ -15784,7 +17244,7 @@
         {
           "to": "DA6",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "DA9",
@@ -15799,17 +17259,17 @@
         {
           "to": "DD1",
           "directed": true,
-          "weight": 4
+          "weight": -4
         },
         {
           "to": "DD2",
           "directed": true,
-          "weight": 4
+          "weight": -4
         },
         {
           "to": "DD3",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "PDB",
@@ -15819,12 +17279,22 @@
         {
           "to": "VD13",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "VD5",
           "directed": true,
-          "weight": 1
+          "weight": -1
+        },
+        {
+          "to": "MDL14",
+          "directed": true,
+          "weight": -1
+        },
+        {
+          "to": "MDL21",
+          "directed": true,
+          "weight": -2
         }
       ]
     },
@@ -16479,6 +17949,16 @@
           "to": "SMDVL",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MDR05",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MVR05",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -16613,6 +18093,26 @@
           "to": "SMDDR",
           "directed": true,
           "weight": 4
+        },
+        {
+          "to": "MDL05",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL07",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL05",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL07",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -16788,12 +18288,12 @@
         {
           "to": "AVEL",
           "directed": true,
-          "weight": 7
+          "weight": -7
         },
         {
           "to": "AVER",
           "directed": true,
-          "weight": 7
+          "weight": -7
         },
         {
           "to": "AVJL",
@@ -16803,32 +18303,32 @@
         {
           "to": "AVKL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "AVKR",
           "directed": true,
-          "weight": 4
+          "weight": -4
         },
         {
           "to": "AVL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "CEPDR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "CEPVL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "CEPVR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "DB1",
@@ -16838,17 +18338,17 @@
         {
           "to": "OLLR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIBL",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "RIBR",
           "directed": true,
-          "weight": 5
+          "weight": -5
         },
         {
           "to": "RIML",
@@ -16858,7 +18358,7 @@
         {
           "to": "RIML",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIMR",
@@ -16868,22 +18368,22 @@
         {
           "to": "RIMR",
           "directed": true,
-          "weight": 4
+          "weight": -4
         },
         {
           "to": "RMDDL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RMDL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "RMDR",
           "directed": true,
-          "weight": 4
+          "weight": -4
         },
         {
           "to": "SMDDL",
@@ -16898,7 +18398,7 @@
         {
           "to": "SMDDR",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "SMDVL",
@@ -16908,12 +18408,12 @@
         {
           "to": "SMDVR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "URYVR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         }
       ]
     },
@@ -16937,12 +18437,12 @@
         {
           "to": "RIAL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIAR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIVR",
@@ -16952,12 +18452,12 @@
         {
           "to": "RMDL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "SAADR",
           "directed": true,
-          "weight": 3
+          "weight": -3
         },
         {
           "to": "SDQR",
@@ -16967,17 +18467,32 @@
         {
           "to": "SIAVR",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "SMDDR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "SMDVL",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MVR05",
+          "directed": true,
+          "weight": -1
+        },
+        {
+          "to": "MVR06",
+          "directed": true,
+          "weight": -1
+        },
+        {
+          "to": "MVR08",
+          "directed": true,
+          "weight": -2
         }
       ]
     },
@@ -17001,12 +18516,12 @@
         {
           "to": "RIAL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "RIAR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIVL",
@@ -17016,27 +18531,27 @@
         {
           "to": "RMDDL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RMDR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RMDVR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RMEV",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "SAADL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "SDQR",
@@ -17046,22 +18561,47 @@
         {
           "to": "SIAVL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "SMDDL",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "SMDVR",
           "directed": true,
-          "weight": 2
+          "weight": -2
         },
         {
           "to": "SMDVR",
           "directed": false,
           "weight": 2
+        },
+        {
+          "to": "MVL05",
+          "directed": true,
+          "weight": -1
+        },
+        {
+          "to": "MVL06",
+          "directed": true,
+          "weight": -1
+        },
+        {
+          "to": "MVL08",
+          "directed": true,
+          "weight": -1
+        },
+        {
+          "to": "MVR04",
+          "directed": true,
+          "weight": -1
+        },
+        {
+          "to": "MVR06",
+          "directed": true,
+          "weight": -1
         }
       ]
     },
@@ -17100,6 +18640,36 @@
         {
           "to": "SMDDL",
           "directed": false,
+          "weight": 1
+        },
+        {
+          "to": "MDR01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR02",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR08",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MVR01",
+          "directed": true,
           "weight": 1
         }
       ]
@@ -17143,6 +18713,41 @@
         },
         {
           "to": "URYDL",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL02",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL03",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR02",
           "directed": true,
           "weight": 1
         }
@@ -17204,6 +18809,51 @@
           "to": "RMFL",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MDL03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL05",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR05",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MVR07",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -17258,6 +18908,31 @@
           "to": "RMDVR",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDL03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL05",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR05",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL05",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -17311,6 +18986,51 @@
         {
           "to": "SMDVL",
           "directed": false,
+          "weight": 1
+        },
+        {
+          "to": "MDR01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR02",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR05",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR06",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR08",
+          "directed": true,
           "weight": 1
         }
       ]
@@ -17381,6 +19101,61 @@
           "to": "SMDVR",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDL01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL02",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL05",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL06",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL08",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR06",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR08",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -17404,12 +19179,12 @@
         {
           "to": "RIBL",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIBR",
           "directed": true,
-          "weight": 1
+          "weight": -1
         },
         {
           "to": "RIPL",
@@ -17425,6 +19200,31 @@
           "to": "RMEV",
           "directed": false,
           "weight": 2
+        },
+        {
+          "to": "MVL02",
+          "directed": true,
+          "weight": -2
+        },
+        {
+          "to": "MVL04",
+          "directed": true,
+          "weight": -2
+        },
+        {
+          "to": "MVL06",
+          "directed": true,
+          "weight": -2
+        },
+        {
+          "to": "MVR02",
+          "directed": true,
+          "weight": -2
+        },
+        {
+          "to": "MVR04",
+          "directed": true,
+          "weight": -2
         }
       ]
     },
@@ -17449,6 +19249,26 @@
           "to": "RMEV",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDR01",
+          "directed": true,
+          "weight": -3
+        },
+        {
+          "to": "MDR03",
+          "directed": true,
+          "weight": -3
+        },
+        {
+          "to": "MVR01",
+          "directed": true,
+          "weight": -3
+        },
+        {
+          "to": "MVR03",
+          "directed": true,
+          "weight": -3
         }
       ]
     },
@@ -17468,6 +19288,21 @@
           "to": "RMEV",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDL01",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MDL03",
+          "directed": true,
+          "weight": -5
+        },
+        {
+          "to": "MVL01",
+          "directed": true,
+          "weight": -5
         }
       ]
     },
@@ -17521,7 +19356,32 @@
         {
           "to": "SMDDR",
           "directed": true,
-          "weight": 1
+          "weight": -1
+        },
+        {
+          "to": "MDL02",
+          "directed": true,
+          "weight": -1
+        },
+        {
+          "to": "MDL04",
+          "directed": true,
+          "weight": -1
+        },
+        {
+          "to": "MDL06",
+          "directed": true,
+          "weight": -1
+        },
+        {
+          "to": "MDR02",
+          "directed": true,
+          "weight": -1
+        },
+        {
+          "to": "MDR04",
+          "directed": true,
+          "weight": -1
         }
       ]
     },
@@ -17570,6 +19430,21 @@
         {
           "to": "URBR",
           "directed": false,
+          "weight": 1
+        },
+        {
+          "to": "MDR03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR03",
+          "directed": true,
           "weight": 1
         }
       ]
@@ -17744,6 +19619,16 @@
           "to": "URXL",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDL05",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MVL05",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -17858,6 +19743,21 @@
           "to": "URXR",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDR05",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR05",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR07",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -17887,6 +19787,21 @@
           "to": "SIBVR",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDR01",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR03",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MVR01",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -17916,6 +19831,26 @@
           "to": "RMGR",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MDL01",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL03",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL05",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MVL01",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -18082,7 +20017,7 @@
       ]
     },
     "SAAVR": {
-      "type": "interneuron",
+      "type": "Interneuron</meta:notes> ",
       "features": {
         "foo": "bar",
         "true": true
@@ -18623,6 +20558,31 @@
           "to": "SAAVR",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MDR01",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR02",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR03",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR04",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR06",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -18672,6 +20632,36 @@
           "to": "SAAVL",
           "directed": true,
           "weight": 3
+        },
+        {
+          "to": "MDL02",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL06",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR08",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -18706,6 +20696,41 @@
           "to": "SAAVR",
           "directed": false,
           "weight": 2
+        },
+        {
+          "to": "MVL01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL02",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL05",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL06",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL08",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -18745,6 +20770,36 @@
           "to": "SAAVL",
           "directed": false,
           "weight": 3
+        },
+        {
+          "to": "MVR01",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR02",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR06",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR07",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -18794,6 +20849,61 @@
           "to": "SMDVR",
           "directed": true,
           "weight": 2
+        },
+        {
+          "to": "MDL04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL06",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL08",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR02",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR05",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR06",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR07",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL02",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL04",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -18837,6 +20947,41 @@
         {
           "to": "VD1",
           "directed": false,
+          "weight": 1
+        },
+        {
+          "to": "MDL04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL05",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL06",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDL08",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MDR06",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR02",
+          "directed": true,
           "weight": 1
         }
       ]
@@ -18907,6 +21052,36 @@
           "to": "SMDVR",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MVL03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL06",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR02",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR06",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -18971,6 +21146,26 @@
           "to": "VB1",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MVL02",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL03",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL04",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR07",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -19000,6 +21195,21 @@
           "to": "RMEL",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MDL02",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL03",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDL04",
+          "directed": true,
+          "weight": 2
         }
       ]
     },
@@ -19044,6 +21254,21 @@
           "to": "URYDR",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MDR01",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MDR02",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MDR03",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -19076,6 +21301,26 @@
         },
         {
           "to": "RMEV",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MVL01",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MVL02",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MVL03",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MVL04",
           "directed": true,
           "weight": 2
         }
@@ -19115,6 +21360,26 @@
         },
         {
           "to": "RMEV",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MVR01",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MVR02",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MVR03",
+          "directed": true,
+          "weight": 2
+        },
+        {
+          "to": "MVR04",
           "directed": true,
           "weight": 2
         }
@@ -19703,6 +21968,26 @@
           "to": "VD1",
           "directed": true,
           "weight": 2
+        },
+        {
+          "to": "MVL07",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MVL08",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MVR07",
+          "directed": true,
+          "weight": 3
+        },
+        {
+          "to": "MVR08",
+          "directed": true,
+          "weight": 3
         }
       ]
     },
@@ -19727,6 +22012,26 @@
           "to": "AVAR",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MVL17",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL18",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR17",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR18",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -19771,6 +22076,26 @@
           "to": "VD12",
           "directed": true,
           "weight": 4
+        },
+        {
+          "to": "MVL19",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL20",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR19",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR20",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -19860,6 +22185,41 @@
           "to": "VD13",
           "directed": true,
           "weight": 11
+        },
+        {
+          "to": "MVL21",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL22",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL23",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR21",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR22",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR23",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR24",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -19924,6 +22284,26 @@
           "to": "VD2",
           "directed": true,
           "weight": 8
+        },
+        {
+          "to": "MVL07",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL10",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR07",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR10",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -19983,6 +22363,36 @@
           "to": "VD3",
           "directed": true,
           "weight": 3
+        },
+        {
+          "to": "MVL09",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL10",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL12",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR09",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR10",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR12",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -20042,6 +22452,26 @@
           "to": "VD4",
           "directed": true,
           "weight": 3
+        },
+        {
+          "to": "MVL11",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVL12",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVR11",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVR12",
+          "directed": true,
+          "weight": 6
         }
       ]
     },
@@ -20091,6 +22521,26 @@
           "to": "VD5",
           "directed": true,
           "weight": 2
+        },
+        {
+          "to": "MVL11",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL14",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR11",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR14",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -20135,6 +22585,26 @@
           "to": "VD6",
           "directed": true,
           "weight": 2
+        },
+        {
+          "to": "MVL13",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL14",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR13",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR14",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -20184,6 +22654,41 @@
           "to": "VD7",
           "directed": true,
           "weight": 9
+        },
+        {
+          "to": "MVL13",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVL15",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVL16",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVR13",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVR15",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVR16",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVULVA",
+          "directed": true,
+          "weight": 4
         }
       ]
     },
@@ -20278,6 +22783,26 @@
           "to": "VD8",
           "directed": true,
           "weight": 5
+        },
+        {
+          "to": "MVL15",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVL16",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVR15",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVR16",
+          "directed": true,
+          "weight": 6
         }
       ]
     },
@@ -20357,6 +22882,26 @@
           "to": "VD9",
           "directed": true,
           "weight": 10
+        },
+        {
+          "to": "MVL15",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL18",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR15",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR18",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -20456,6 +23001,26 @@
           "to": "VD2",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MVL07",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVL08",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR07",
+          "directed": true,
+          "weight": 1
+        },
+        {
+          "to": "MVR08",
+          "directed": true,
+          "weight": 1
         }
       ]
     },
@@ -20510,6 +23075,26 @@
           "to": "VD12",
           "directed": true,
           "weight": 2
+        },
+        {
+          "to": "MVL19",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL20",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR19",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR20",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -20554,6 +23139,41 @@
           "to": "VA12",
           "directed": true,
           "weight": 1
+        },
+        {
+          "to": "MVL21",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL22",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL23",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR21",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR22",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR23",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR24",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -20638,6 +23258,46 @@
           "to": "VD3",
           "directed": true,
           "weight": 3
+        },
+        {
+          "to": "MVL07",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVL09",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVL10",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVL12",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVR07",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVR09",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVR10",
+          "directed": true,
+          "weight": 4
+        },
+        {
+          "to": "MVR12",
+          "directed": true,
+          "weight": 4
         }
       ]
     },
@@ -20682,6 +23342,36 @@
           "to": "VB2",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MVL11",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVL12",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVL14",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVR11",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVR12",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVR14",
+          "directed": true,
+          "weight": 6
         }
       ]
     },
@@ -20731,6 +23421,26 @@
           "to": "VB5",
           "directed": false,
           "weight": 1
+        },
+        {
+          "to": "MVL11",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL14",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR11",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR14",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -20775,6 +23485,26 @@
           "to": "VD6",
           "directed": true,
           "weight": 7
+        },
+        {
+          "to": "MVL13",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVL14",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVR13",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVR14",
+          "directed": true,
+          "weight": 6
         }
       ]
     },
@@ -20834,6 +23564,31 @@
           "to": "VD7",
           "directed": true,
           "weight": 8
+        },
+        {
+          "to": "MVL15",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVL16",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVR15",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVR16",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVULVA",
+          "directed": true,
+          "weight": 6
         }
       ]
     },
@@ -20868,6 +23623,16 @@
           "to": "VB2",
           "directed": false,
           "weight": 2
+        },
+        {
+          "to": "MVL15",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR15",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -20932,6 +23697,36 @@
           "to": "VD9",
           "directed": true,
           "weight": 10
+        },
+        {
+          "to": "MVL17",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL18",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVL20",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR17",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR18",
+          "directed": true,
+          "weight": 5
+        },
+        {
+          "to": "MVR20",
+          "directed": true,
+          "weight": 5
         }
       ]
     },
@@ -21006,7 +23801,1385 @@
           "to": "VD10",
           "directed": true,
           "weight": 5
+        },
+        {
+          "to": "MVL17",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVL20",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVR17",
+          "directed": true,
+          "weight": 6
+        },
+        {
+          "to": "MVR20",
+          "directed": true,
+          "weight": 6
         }
+      ]
+    },
+    "MANAL": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVULVA": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL01": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL02": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL03": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL04": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL05": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL06": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL07": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL08": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL09": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL10": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL11": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL12": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL13": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL14": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL15": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL16": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL17": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL18": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL19": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL20": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL21": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL22": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL23": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDL24": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR01": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR02": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR03": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR04": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR05": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR06": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR07": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR08": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR09": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR10": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR11": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR12": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR13": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR14": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR15": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR16": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR17": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR18": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR19": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR20": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR21": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR22": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR23": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MDR24": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL01": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL02": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL03": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL04": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL05": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL06": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL07": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL08": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL09": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL10": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL11": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL12": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL13": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL14": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL15": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL16": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL17": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL18": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL19": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL20": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL21": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL22": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVL23": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR01": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR02": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR03": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR04": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR05": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR06": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR07": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR08": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR09": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR10": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR11": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR12": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR13": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR14": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR15": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR16": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR17": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR18": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR19": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR20": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR21": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR22": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR23": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
+      ]
+    },
+    "MVR24": {
+      "type": "Muscle",
+      "features": {
+        "foo": "bar",
+        "true": true
+      },
+      "coords": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "edges": [
       ]
     }
   }

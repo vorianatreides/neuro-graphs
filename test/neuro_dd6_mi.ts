@@ -1,7 +1,7 @@
-{
+let CONFIG = {
   "name": "Neuro graph test scenario",
   "nodes": 299,
-  "edges": "2836",
+  "edges": 3364,
   "data": {
     "ADAL": {
       "type": "interneuron",
@@ -21010,4 +21010,6 @@
       ]
     }
   }
-}
+};
+
+export {CONFIG};
