@@ -55,10 +55,10 @@ describe('GRAPHINIUS IMPORT TESTS', () => {
   
   
   it('should import a graph from a valid json file', () => {
-    //var json_file = "./input_data/neuro_dd6_mi.json";
+    var json_file = "./input_data/neuro_dd6_mi.json";
     //let json_file = "./input_data/abc.json";
     //let json_file = "./input_data/muscle.json";
-    let json_file = "./input_data/neuro.json";
+    //let json_file = "./input_data/neuro_muscle.json";
     var jsonReader = new $G.input.JSONInput(true, false, true);
     
     var neuro_graph = jsonReader.readFromJSONFile(json_file);

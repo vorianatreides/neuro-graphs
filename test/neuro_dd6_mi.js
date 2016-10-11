@@ -2,7 +2,7 @@
 var CONFIG = {
     "name": "Neuro graph test scenario",
     "nodes": 299,
-    "edges": 3364,
+    "edges": "2836",
     "data": {
         "ADAL": {
             "type": "interneuron",
@@ -6359,27 +6359,27 @@ var CONFIG = {
                 {
                     "to": "AVEL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AVFR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "DA2",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "DD1",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "DD6",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "DVB",
@@ -6394,7 +6394,7 @@ var CONFIG = {
                 {
                     "to": "HSNR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "PVM",
@@ -6404,32 +6404,32 @@ var CONFIG = {
                 {
                     "to": "PVPR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "PVWL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "SABD",
                     "directed": true,
-                    "weight": 5
+                    "weight": -5
                 },
                 {
                     "to": "SABVL",
                     "directed": true,
-                    "weight": 4
+                    "weight": -4
                 },
                 {
                     "to": "SABVR",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "VD12",
                     "directed": true,
-                    "weight": 4
+                    "weight": -4
                 }
             ]
         },
@@ -7069,42 +7069,42 @@ var CONFIG = {
                 {
                     "to": "ADEL",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "AVHL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AVJR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "HSNL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "PVNL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "PVNR",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "SAADL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "URADL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 }
             ]
         },
@@ -7123,57 +7123,57 @@ var CONFIG = {
                 {
                     "to": "ADER",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "ALMR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AVAL",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "AVHL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AVJL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "HSNR",
                     "directed": true,
-                    "weight": 4
+                    "weight": -4
                 },
                 {
                     "to": "PVCL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "PVNL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "PVNR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "SDQL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "URADR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 }
             ]
         },
@@ -8392,7 +8392,7 @@ var CONFIG = {
                 {
                     "to": "DA2",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "DD2",
@@ -8407,7 +8407,7 @@ var CONFIG = {
                 {
                     "to": "VD2",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VD2",
@@ -8431,7 +8431,7 @@ var CONFIG = {
                 {
                     "to": "DA3",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "DD1",
@@ -8446,12 +8446,12 @@ var CONFIG = {
                 {
                     "to": "VD3",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VD4",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VD4",
@@ -8528,7 +8528,7 @@ var CONFIG = {
                 {
                     "to": "VB8",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VD10",
@@ -8538,7 +8538,7 @@ var CONFIG = {
                 {
                     "to": "VD9",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 }
             ]
         },
@@ -8570,32 +8570,32 @@ var CONFIG = {
                 {
                     "to": "AIZL",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "AQR",
                     "directed": true,
-                    "weight": 4
+                    "weight": -4
                 },
                 {
                     "to": "AUAL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AUAR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AVAL",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "AVAR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AVBL",
@@ -8605,7 +8605,7 @@ var CONFIG = {
                 {
                     "to": "AVBL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AVBR",
@@ -8615,12 +8615,12 @@ var CONFIG = {
                 {
                     "to": "AVEL",
                     "directed": true,
-                    "weight": 9
+                    "weight": -9
                 },
                 {
                     "to": "AVER",
                     "directed": true,
-                    "weight": 5
+                    "weight": -5
                 },
                 {
                     "to": "DB1",
@@ -8630,37 +8630,37 @@ var CONFIG = {
                 {
                     "to": "DB2",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "DB3",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "DB4",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "DB5",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "DB6",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "DB7",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "PDEL",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "PVCL",
@@ -8670,17 +8670,17 @@ var CONFIG = {
                 {
                     "to": "PVCL",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "PVCR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "PVR",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "PVR",
@@ -8690,82 +8690,82 @@ var CONFIG = {
                 {
                     "to": "RIAL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIAR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIMR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIR",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "SAADR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "SAAVL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "SAAVR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "SABD",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "SMBDL",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "SMBDR",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "SMBVL",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "SMBVR",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "VA12",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VA2",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VB1",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VB11",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 }
             ]
         },
@@ -8794,37 +8794,37 @@ var CONFIG = {
                 {
                     "to": "AVL",
                     "directed": true,
-                    "weight": 5
+                    "weight": -5
                 },
                 {
                     "to": "DA8",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "DD6",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "DVC",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "PDA",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "PHCL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "PVPL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VA9",
@@ -8858,7 +8858,7 @@ var CONFIG = {
                 {
                     "to": "AIBL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AIBR",
@@ -8868,32 +8868,32 @@ var CONFIG = {
                 {
                     "to": "AIBR",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "AVAL",
                     "directed": true,
-                    "weight": 5
+                    "weight": -5
                 },
                 {
                     "to": "AVAR",
                     "directed": true,
-                    "weight": 7
+                    "weight": -7
                 },
                 {
                     "to": "AVBL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AVKL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "AVKR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AVL",
@@ -8913,37 +8913,37 @@ var CONFIG = {
                 {
                     "to": "PVT",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIBL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIBR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIGL",
                     "directed": true,
-                    "weight": 5
+                    "weight": -5
                 },
                 {
                     "to": "RIGR",
                     "directed": true,
-                    "weight": 5
+                    "weight": -5
                 },
                 {
                     "to": "RMFL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "RMFR",
                     "directed": true,
-                    "weight": 4
+                    "weight": -4
                 },
                 {
                     "to": "VA9",
@@ -10835,7 +10835,7 @@ var CONFIG = {
                 {
                     "to": "DD1",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "DD1",
@@ -10865,7 +10865,7 @@ var CONFIG = {
                 {
                     "to": "VA1",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "VA2",
@@ -10909,7 +10909,7 @@ var CONFIG = {
                 {
                     "to": "DD5",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "DVC",
@@ -10919,7 +10919,7 @@ var CONFIG = {
                 {
                     "to": "VB9",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "VD9",
@@ -10943,17 +10943,17 @@ var CONFIG = {
                 {
                     "to": "AVAR",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "VA11",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VB10",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 }
             ]
         },
@@ -10972,22 +10972,22 @@ var CONFIG = {
                 {
                     "to": "VA11",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "VA12",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "VB10",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VB11",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 }
             ]
         },
@@ -11006,17 +11006,17 @@ var CONFIG = {
                 {
                     "to": "AVAR",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "PVCL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "PVCR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "PVPL",
@@ -11026,7 +11026,7 @@ var CONFIG = {
                 {
                     "to": "VA12",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 }
             ]
         },
@@ -11050,7 +11050,7 @@ var CONFIG = {
                 {
                     "to": "DD1",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "DD1",
@@ -11065,12 +11065,12 @@ var CONFIG = {
                 {
                     "to": "VA2",
                     "directed": true,
-                    "weight": 6
+                    "weight": -6
                 },
                 {
                     "to": "VB2",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "VD1",
@@ -11104,12 +11104,12 @@ var CONFIG = {
                 {
                     "to": "VA3",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "VB2",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "VD2",
@@ -11172,7 +11172,7 @@ var CONFIG = {
                 {
                     "to": "AVAR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "PVPR",
@@ -11182,12 +11182,12 @@ var CONFIG = {
                 {
                     "to": "VA5",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "VB4",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "VD4",
@@ -11216,17 +11216,17 @@ var CONFIG = {
                 {
                     "to": "AVAL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VA6",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VB5",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "VD5",
@@ -11284,7 +11284,7 @@ var CONFIG = {
                 {
                     "to": "DD4",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VA8",
@@ -11294,7 +11294,7 @@ var CONFIG = {
                 {
                     "to": "VA8",
                     "directed": true,
-                    "weight": 4
+                    "weight": -4
                 }
             ]
         },
@@ -15125,77 +15125,77 @@ var CONFIG = {
                 {
                     "to": "CEPVL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIAR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIVL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "RIVR",
                     "directed": true,
-                    "weight": 4
+                    "weight": -4
                 },
                 {
                     "to": "RMDDL",
                     "directed": true,
-                    "weight": 12
+                    "weight": -12
                 },
                 {
                     "to": "RMDDR",
                     "directed": true,
-                    "weight": 7
+                    "weight": -7
                 },
                 {
                     "to": "RMDL",
                     "directed": true,
-                    "weight": 6
+                    "weight": -6
                 },
                 {
                     "to": "RMDR",
                     "directed": true,
-                    "weight": 6
+                    "weight": -6
                 },
                 {
                     "to": "RMDVL",
                     "directed": true,
-                    "weight": 9
+                    "weight": -9
                 },
                 {
                     "to": "RMDVR",
                     "directed": true,
-                    "weight": 11
+                    "weight": -11
                 },
                 {
                     "to": "SIADL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "SMDDL",
                     "directed": true,
-                    "weight": 8
+                    "weight": -8
                 },
                 {
                     "to": "SMDDR",
                     "directed": true,
-                    "weight": 10
+                    "weight": -10
                 },
                 {
                     "to": "SMDVL",
                     "directed": true,
-                    "weight": 6
+                    "weight": -6
                 },
                 {
                     "to": "SMDVR",
                     "directed": true,
-                    "weight": 11
+                    "weight": -11
                 }
             ]
         },
@@ -15214,92 +15214,92 @@ var CONFIG = {
                 {
                     "to": "CEPVR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "IL1R",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIAL",
                     "directed": true,
-                    "weight": 4
+                    "weight": -4
                 },
                 {
                     "to": "RIVL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RMDDL",
                     "directed": true,
-                    "weight": 10
+                    "weight": -10
                 },
                 {
                     "to": "RMDDR",
                     "directed": true,
-                    "weight": 11
+                    "weight": -11
                 },
                 {
                     "to": "RMDL",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "RMDR",
                     "directed": true,
-                    "weight": 8
+                    "weight": -8
                 },
                 {
                     "to": "RMDVL",
                     "directed": true,
-                    "weight": 12
+                    "weight": -12
                 },
                 {
                     "to": "RMDVR",
                     "directed": true,
-                    "weight": 10
+                    "weight": -10
                 },
                 {
                     "to": "SAADR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "SIADL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "SIADR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "SIAVL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "SMDDL",
                     "directed": true,
-                    "weight": 7
+                    "weight": -7
                 },
                 {
                     "to": "SMDDR",
                     "directed": true,
-                    "weight": 7
+                    "weight": -7
                 },
                 {
                     "to": "SMDVL",
                     "directed": true,
-                    "weight": 13
+                    "weight": -13
                 },
                 {
                     "to": "SMDVR",
                     "directed": true,
-                    "weight": 7
+                    "weight": -7
                 }
             ]
         },
@@ -15764,12 +15764,12 @@ var CONFIG = {
                 {
                     "to": "ALA",
                     "directed": false,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AS2",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AVBL",
@@ -15784,7 +15784,7 @@ var CONFIG = {
                 {
                     "to": "DA6",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "DA9",
@@ -15799,17 +15799,17 @@ var CONFIG = {
                 {
                     "to": "DD1",
                     "directed": true,
-                    "weight": 4
+                    "weight": -4
                 },
                 {
                     "to": "DD2",
                     "directed": true,
-                    "weight": 4
+                    "weight": -4
                 },
                 {
                     "to": "DD3",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "PDB",
@@ -15819,12 +15819,12 @@ var CONFIG = {
                 {
                     "to": "VD13",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "VD5",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 }
             ]
         },
@@ -16788,12 +16788,12 @@ var CONFIG = {
                 {
                     "to": "AVEL",
                     "directed": true,
-                    "weight": 7
+                    "weight": -7
                 },
                 {
                     "to": "AVER",
                     "directed": true,
-                    "weight": 7
+                    "weight": -7
                 },
                 {
                     "to": "AVJL",
@@ -16803,32 +16803,32 @@ var CONFIG = {
                 {
                     "to": "AVKL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "AVKR",
                     "directed": true,
-                    "weight": 4
+                    "weight": -4
                 },
                 {
                     "to": "AVL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "CEPDR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "CEPVL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "CEPVR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "DB1",
@@ -16838,17 +16838,17 @@ var CONFIG = {
                 {
                     "to": "OLLR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIBL",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "RIBR",
                     "directed": true,
-                    "weight": 5
+                    "weight": -5
                 },
                 {
                     "to": "RIML",
@@ -16858,7 +16858,7 @@ var CONFIG = {
                 {
                     "to": "RIML",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIMR",
@@ -16868,22 +16868,22 @@ var CONFIG = {
                 {
                     "to": "RIMR",
                     "directed": true,
-                    "weight": 4
+                    "weight": -4
                 },
                 {
                     "to": "RMDDL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RMDL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "RMDR",
                     "directed": true,
-                    "weight": 4
+                    "weight": -4
                 },
                 {
                     "to": "SMDDL",
@@ -16898,7 +16898,7 @@ var CONFIG = {
                 {
                     "to": "SMDDR",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "SMDVL",
@@ -16908,12 +16908,12 @@ var CONFIG = {
                 {
                     "to": "SMDVR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "URYVR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 }
             ]
         },
@@ -16937,12 +16937,12 @@ var CONFIG = {
                 {
                     "to": "RIAL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIAR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIVR",
@@ -16952,12 +16952,12 @@ var CONFIG = {
                 {
                     "to": "RMDL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "SAADR",
                     "directed": true,
-                    "weight": 3
+                    "weight": -3
                 },
                 {
                     "to": "SDQR",
@@ -16967,12 +16967,12 @@ var CONFIG = {
                 {
                     "to": "SIAVR",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "SMDDR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "SMDVL",
@@ -17001,12 +17001,12 @@ var CONFIG = {
                 {
                     "to": "RIAL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "RIAR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIVL",
@@ -17016,27 +17016,27 @@ var CONFIG = {
                 {
                     "to": "RMDDL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RMDR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RMDVR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RMEV",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "SAADL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "SDQR",
@@ -17046,17 +17046,17 @@ var CONFIG = {
                 {
                     "to": "SIAVL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "SMDDL",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "SMDVR",
                     "directed": true,
-                    "weight": 2
+                    "weight": -2
                 },
                 {
                     "to": "SMDVR",
@@ -17404,12 +17404,12 @@ var CONFIG = {
                 {
                     "to": "RIBL",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIBR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 },
                 {
                     "to": "RIPL",
@@ -17521,7 +17521,7 @@ var CONFIG = {
                 {
                     "to": "SMDDR",
                     "directed": true,
-                    "weight": 1
+                    "weight": -1
                 }
             ]
         },
@@ -18082,7 +18082,7 @@ var CONFIG = {
             ]
         },
         "SAAVR": {
-            "type": "interneuron",
+            "type": "Interneuron</meta:notes> ",
             "features": {
                 "foo": "bar",
                 "true": true

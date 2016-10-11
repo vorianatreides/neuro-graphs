@@ -2,8 +2,8 @@
 
 import * as chai from 'chai';
 // import * as BCM from '../../src/learning_models/BCM';
-//import * as $C from '../neuro_dd6_mi';
-import * as $C from '../abc';
+import * as $C from '../neuro_dd6_mi';
+//import * as $C from '../abc';
 //import * as $C from '../muscle';
 import * as $G from 'graphinius';
 
@@ -21,8 +21,8 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', () => {
   });
   
 //------------------------------------------------------------------------------
-  //let json_file = "./input_data/neuro_dd6_mi.json";
-  let json_file = "./input_data/abc.json";
+  let json_file = "./input_data/neuro_dd6_mi.json";
+  //let json_file = "./input_data/abc.json";
   //let json_file = "./input_data/muscle.json";
   let jsonReader = new $G.input.JSONInput(true, false, true);
   let neuro_graph = jsonReader.readFromJSONFile(json_file);
@@ -55,7 +55,8 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', () => {
   function generateInVec (all_ids: string[], connectome: any) {
     let input: number[] = [];
     for (let i in all_ids) {
-      input[i] = connectome.data[all_ids[i]].type === "SensoryNeuron" ? 1 : 0;
+      //input[i] = connectome.data[all_ids[i]].type === "SensoryNeuron" ? 1 : 0;
+      input[i] = all_ids[i] === "ADEL" ? 1 : 0;
     }
     return input;
   }
@@ -218,6 +219,24 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', () => {
   }
 //------------------------------------------------------------------------------
 
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
+  if (epoch === 0) {
+    fs.writeFileSync ('./Epochs_Table.csv', "Epoch,");
+    for (let i = 0; i < (all_ids.length - 1); ++i) {
+      fs.appendFileSync ('./Epochs_Table.csv', all_ids[i] + ",");
+    }
+    fs.appendFileSync ('./Epochs_Table.csv', all_ids[all_ids.length - 1] + "\n");
+  }
+  fs.appendFileSync ('./Epochs_Table.csv', (epoch) + ",");
+  for (let i = 0; i < (vector.length - 1); ++i) {
+    fs.appendFileSync ('./Epochs_Table.csv', vector[i] + ",");
+  }
+  fs.appendFileSync ('./Epochs_Table.csv', vector[vector.length - 1] + "\n");
+}
+//------------------------------------------------------------------------------
+
 
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
@@ -277,6 +296,17 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', () => {
 	    return ans;
     }
 
+    // Private method for the tanh activation function
+    private tanh (x: number[], k: number[]) {
+      let ans: number[] = [];
+      for (let i in x) {
+        ans[i] = (2 / (1 + Math.pow (Math.E, -2*k[i]*x[i]))) - 1;
+        if (ans[i] >= 0.999) {ans[i] = 1;}
+        else if (ans[i] <= -0.999) {ans[i] = -1;}
+      }
+      return ans;
+    }
+
     //--------------------------------------------------------------------------
     // Public method to get the properties c and k of a single neuron.
     getPropertiesOf (i: number) {return this.properties[i];}
@@ -334,16 +364,18 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', () => {
   //neuro_sim.Noise = true;
   neuro_sim.Input = generateInVec (all_ids, connectome);
   let ctr = 0;
-  for (let i = 0; i < 2; ++i) { //e.g. i < 3 for the 3rd epoch
+  writeEpochsTable (0, all_ids, neuro_sim.Input);
+  for (let i = 0; i < neuro_graph.getStats().nr_nodes; ++i) { //e.g. i < 3 for the 3rd epoch
     let output = neuro_sim.exec(i);
     if (!neuro_sim.Undirected) {
-      writeEpoch (i, all_ids, output, neuro_sim);
+      //writeEpoch (i, all_ids, output, neuro_sim);
       ctr += vecEq (output, neuro_sim.Input) ? 1 : 0;
     }
     else if (!!(i % 2)) {
-      writeEpoch (i, all_ids, output, neuro_sim);
+      //writeEpoch (i, all_ids, output, neuro_sim);
       ctr += vecEq (output, neuro_sim.Input) ? 1 : 0;
     }
+    writeEpochsTable (i + 1, all_ids, output);
     if (ctr === 3) {
       console.log ("Input === Output!\n");
       break;

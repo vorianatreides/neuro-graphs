@@ -2,8 +2,8 @@
 "use strict";
 var chai = require('chai');
 // import * as BCM from '../../src/learning_models/BCM';
-//import * as $C from '../neuro_dd6_mi';
-var $C = require('../abc');
+var $C = require('../neuro_dd6_mi');
+//import * as $C from '../abc';
 //import * as $C from '../muscle';
 var $G = require('graphinius');
 //let $G = require('graphinius').$G;
@@ -14,8 +14,8 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
         expect(true).to.be.true;
     });
     //------------------------------------------------------------------------------
-    //let json_file = "./input_data/neuro_dd6_mi.json";
-    var json_file = "./input_data/abc.json";
+    var json_file = "./input_data/neuro_dd6_mi.json";
+    //let json_file = "./input_data/abc.json";
     //let json_file = "./input_data/muscle.json";
     var jsonReader = new $G.input.JSONInput(true, false, true);
     var neuro_graph = jsonReader.readFromJSONFile(json_file);
@@ -44,7 +44,8 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
     function generateInVec(all_ids, connectome) {
         var input = [];
         for (var i in all_ids) {
-            input[i] = connectome.data[all_ids[i]].type === "SensoryNeuron" ? 1 : 0;
+            //input[i] = connectome.data[all_ids[i]].type === "SensoryNeuron" ? 1 : 0;
+            input[i] = all_ids[i] === "ADEL" ? 1 : 0;
         }
         return input;
     }
@@ -207,6 +208,23 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
     //------------------------------------------------------------------------------
     //------------------------------------------------------------------------------
     //------------------------------------------------------------------------------
+    function writeEpochsTable(epoch, all_ids, vector) {
+        if (epoch === 0) {
+            fs.writeFileSync('./Epochs_Table.csv', "Epoch,");
+            for (var i = 0; i < (all_ids.length - 1); ++i) {
+                fs.appendFileSync('./Epochs_Table.csv', all_ids[i] + ",");
+            }
+            fs.appendFileSync('./Epochs_Table.csv', all_ids[all_ids.length - 1] + "\n");
+        }
+        fs.appendFileSync('./Epochs_Table.csv', (epoch) + ",");
+        for (var i = 0; i < (vector.length - 1); ++i) {
+            fs.appendFileSync('./Epochs_Table.csv', vector[i] + ",");
+        }
+        fs.appendFileSync('./Epochs_Table.csv', vector[vector.length - 1] + "\n");
+    }
+    //------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------
     var Simulation = (function () {
         //--------------------------------------------------------------------------
         function Simulation(all_ids, graph_d, graph_u) {
@@ -349,16 +367,18 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
     //neuro_sim.Noise = true;
     neuro_sim.Input = generateInVec(all_ids, connectome);
     var ctr = 0;
-    for (var i = 0; i < 2; ++i) {
+    writeEpochsTable(0, all_ids, neuro_sim.Input);
+    for (var i = 0; i < neuro_graph.getStats().nr_nodes; ++i) {
         var output = neuro_sim.exec(i);
         if (!neuro_sim.Undirected) {
-            writeEpoch(i, all_ids, output, neuro_sim);
+            //writeEpoch (i, all_ids, output, neuro_sim);
             ctr += vecEq(output, neuro_sim.Input) ? 1 : 0;
         }
         else if (!!(i % 2)) {
-            writeEpoch(i, all_ids, output, neuro_sim);
+            //writeEpoch (i, all_ids, output, neuro_sim);
             ctr += vecEq(output, neuro_sim.Input) ? 1 : 0;
         }
+        writeEpochsTable(i + 1, all_ids, output);
         if (ctr === 3) {
             console.log("Input === Output!\n");
             break;
