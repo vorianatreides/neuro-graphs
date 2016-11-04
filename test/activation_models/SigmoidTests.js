@@ -45,7 +45,7 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
         var input = [];
         for (var i in all_ids) {
             //input[i] = connectome.data[all_ids[i]].type === "SensoryNeuron" ? 1 : 0;
-            input[i] = all_ids[i] === "ADEL" ? 1 : 0;
+            input[i] = (all_ids[i] === "ADAL" || all_ids[i] === "ADAR") ? 0.2 : 0;
         }
         return input;
     }
@@ -232,10 +232,10 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
             this.graph_d = graph_d;
             this.graph_u = graph_u;
             this.input = [];
-            this.threshold = []; // Or should it be bias?
-            this.properties = []; // Of the sigmoid fucntion -> c and k;
-            this.prop_c = [];
-            this.prop_k = [];
+            this.threshold = [];
+            this.properties = [];
+            this.prop_c = 1;
+            this.prop_k = 15;
             this.noise = false;
             this.refraction = [];
             this.undirected = true;
@@ -243,8 +243,8 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
                 this.input.push(0);
                 this.threshold.push(0.6);
                 this.properties[i] = [1, 15];
-                this.prop_c[i] = 1;
-                this.prop_k[i] = 15;
+                //this.prop_c[i] = 1;
+                //this.prop_k[i] = 15;
                 this.refraction.push(1);
             }
             if (graph_u === void 0) {
@@ -309,8 +309,29 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
         Simulation.prototype.sigmoid = function (x, c, k) {
             var ans = [];
             for (var i in x) {
-                ans[i] = (c[i] / (1 + Math.pow(Math.E, -k[i] * x[i])));
-                ans[i] = ans[i] <= 0.001 ? 0 : ans[i];
+                //ans[i] = (c[i] / (1 + Math.pow (Math.E, -k[i]*x[i])));
+                //ans[i] = ans[i] <= 0.001 ? 0 : ans[i];
+                ans[i] = (c / (1 + Math.pow(Math.E, -k * x[i])));
+                if (ans[i] >= (c - 0.001)) {
+                    ans[i] = c;
+                }
+                else if (ans[i] <= 0.001) {
+                    ans[i] = 0;
+                }
+            }
+            return ans;
+        };
+        // Private method for the tanh activation function
+        Simulation.prototype.tanh = function (x, c, k) {
+            var ans = [];
+            for (var i in x) {
+                ans[i] = (2 * c[i] / (1 + Math.pow(Math.E, -2 * k[i] * x[i]))) - 1;
+                if (ans[i] >= 0.999) {
+                    ans[i] = 1;
+                }
+                else if (ans[i] <= -0.999) {
+                    ans[i] = -1;
+                }
             }
             return ans;
         };
@@ -326,6 +347,7 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
                 tmp_u = matVecProduct(this.graph_u, this.input);
                 tmp_u = vecMath(tmp_u, vecMath(this.threshold, this.refraction, "*"), "-");
                 if (!!!(epoch % 2)) {
+                    //let output = this.tanh (tmp_u, this.prop_c, this.prop_k);
                     var output_1 = this.sigmoid(tmp_u, this.prop_c, this.prop_k);
                     for (var i in output_1) {
                         output_1[i] += this.input[i];
@@ -350,6 +372,7 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
                     tmp[i] += Math.pow(Math.random(), 3) * this.properties[i][0];
                 }
             }
+            //let output = this.tanh (tmp, this.prop_c, this.prop_k);
             var output = this.sigmoid(tmp, this.prop_c, this.prop_k);
             for (var i in this.input) {
                 this.refraction[i] -= this.refraction[i] !== 1 ? 1 : 0;
@@ -366,39 +389,40 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
     //let neuro_sim = new Simulation (all_ids, dirMat (all_nodes, all_ids));
     //neuro_sim.Noise = true;
     neuro_sim.Input = generateInVec(all_ids, connectome);
-    var ctr = 0;
+    //let ctr = 0;
     writeEpochsTable(0, all_ids, neuro_sim.Input);
     for (var i = 0; i < neuro_graph.getStats().nr_nodes; ++i) {
         var output = neuro_sim.exec(i);
-        if (!neuro_sim.Undirected) {
-            //writeEpoch (i, all_ids, output, neuro_sim);
-            ctr += vecEq(output, neuro_sim.Input) ? 1 : 0;
+        /*if (!neuro_sim.Undirected) {
+          //writeEpoch (i, all_ids, output, neuro_sim);
+          ctr += vecEq (output, neuro_sim.Input) ? 1 : 0;
         }
         else if (!!(i % 2)) {
-            //writeEpoch (i, all_ids, output, neuro_sim);
-            ctr += vecEq(output, neuro_sim.Input) ? 1 : 0;
-        }
+          //writeEpoch (i, all_ids, output, neuro_sim);
+          ctr += vecEq (output, neuro_sim.Input) ? 1 : 0;
+        }*/
         writeEpochsTable(i + 1, all_ids, output);
-        if (ctr === 3) {
-            console.log("Input === Output!\n");
-            break;
-        }
+        /*if (ctr === 3) {
+          console.log ("Input === Output!\n");
+          break;
+        }*/
         neuro_sim.Input = output;
     }
     //if (vecEq (output, neuro_sim.Input)) {console.log ("Input === Output!\n");}
-    fs.writeFileSync('./mat_dir.txt', "");
-    for (var i in neuro_sim.MatrixD) {
-        for (var j in neuro_sim.MatrixD[i]) {
-            fs.appendFileSync('./mat_dir.txt', neuro_sim.MatrixD[i][j] + " ");
-        }
-        fs.appendFileSync('./mat_dir.txt', "\n");
+    /*fs.writeFileSync ('./mat_dir.txt', "");
+    for (let i in neuro_sim.MatrixD) {
+      for (let j in neuro_sim.MatrixD[i]) {
+        fs.appendFileSync ('./mat_dir.txt', neuro_sim.MatrixD[i][j] + " ");
+      }
+      fs.appendFileSync ('./mat_dir.txt', "\n");
     }
-    fs.writeFileSync('./mat_und.txt', "");
-    for (var i in neuro_sim.MatrixU) {
-        for (var j in neuro_sim.MatrixU[i]) {
-            fs.appendFileSync('./mat_und.txt', neuro_sim.MatrixU[i][j] + " ");
-        }
-        fs.appendFileSync('./mat_und.txt', "\n");
-    }
+  
+    fs.writeFileSync ('./mat_und.txt', "");
+    for (let i in neuro_sim.MatrixU) {
+      for (let j in neuro_sim.MatrixU[i]) {
+        fs.appendFileSync ('./mat_und.txt', neuro_sim.MatrixU[i][j] + " ");
+      }
+      fs.appendFileSync ('./mat_und.txt', "\n");
+    }*/
     //------------------------------------------------------------------------------
 });

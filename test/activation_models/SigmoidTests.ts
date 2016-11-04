@@ -56,7 +56,7 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', () => {
     let input: number[] = [];
     for (let i in all_ids) {
       //input[i] = connectome.data[all_ids[i]].type === "SensoryNeuron" ? 1 : 0;
-      input[i] = all_ids[i] === "ADEL" ? 1 : 0;
+      input[i] = (all_ids[i] === "ADAL" || all_ids[i] === "ADAR") ? 0.2 : 0;
     }
     return input;
   }
@@ -241,24 +241,32 @@ function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
   class Simulation {
-    private input: number[] = [];
-    private threshold: number[] = []; // Or should it be bias?
-    private properties: number[][] = []; // Of the sigmoid fucntion -> c and k;
-    private prop_c: number[] = [];
-    private prop_k: number[] = [];
-    private noise = false;
-    private refraction: number[] = [];
-    private undirected: boolean = true;
+    private input: number[];
+    private threshold: number[]; // Or should it be bias?
+    private properties: number[][]; // Of the sigmoid fucntion -> c and k;
+    private prop_c: number;
+    private prop_k: number;
+    private noise;
+    private refraction: number[];
+    private undirected: boolean;
 
     //--------------------------------------------------------------------------
     constructor (private all_ids: string[], private graph_d: number[][],
                  private graph_u?: number[][]) {
+      this.input = [];
+      this.threshold = [];
+      this.properties = [];
+      this.prop_c = 1;
+      this.prop_k = 15;
+      this.noise = false;
+      this.refraction = [];
+      this.undirected = true;
       for (let i in all_ids) {
         this.input.push(0);
         this.threshold.push(0.6);
         this.properties[i] = [1,15];
-        this.prop_c[i] = 1;
-        this.prop_k[i] = 15;
+        //this.prop_c[i] = 1;
+        //this.prop_k[i] = 15;
         this.refraction.push(1);
       }
       if (graph_u === void 0) {
@@ -287,20 +295,23 @@ function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
 
     //--------------------------------------------------------------------------
     // Private method for the sigmoid (or logistic) function.
-    private sigmoid (x: number[], c: number[], k: number[]) {
+    private sigmoid (x: number[], c: number, k: number) {
       let ans: number[] = [];
       for (let i in x) {
-        ans[i] = (c[i] / (1 + Math.pow (Math.E, -k[i]*x[i])));
-        ans[i] = ans[i] <= 0.001 ? 0 : ans[i];
+        //ans[i] = (c[i] / (1 + Math.pow (Math.E, -k[i]*x[i])));
+        //ans[i] = ans[i] <= 0.001 ? 0 : ans[i];
+        ans[i] = (c / (1 + Math.pow (Math.E, -k*x[i])));
+        if (ans[i] >= (c - 0.001)) {ans[i] = c;}
+        else if (ans[i] <= 0.001) {ans[i] = 0;}
       }
 	    return ans;
     }
 
     // Private method for the tanh activation function
-    private tanh (x: number[], k: number[]) {
+    private tanh (x: number[], c : number[], k: number[]) {
       let ans: number[] = [];
       for (let i in x) {
-        ans[i] = (2 / (1 + Math.pow (Math.E, -2*k[i]*x[i]))) - 1;
+        ans[i] = (2*c[i] / (1 + Math.pow (Math.E, -2*k[i]*x[i]))) - 1;
         if (ans[i] >= 0.999) {ans[i] = 1;}
         else if (ans[i] <= -0.999) {ans[i] = -1;}
       }
@@ -320,6 +331,7 @@ function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
         tmp_u = matVecProduct (this.graph_u, this.input);
         tmp_u = vecMath (tmp_u, vecMath (this.threshold, this.refraction, "*"), "-");
         if (!!!(epoch % 2)) {
+          //let output = this.tanh (tmp_u, this.prop_c, this.prop_k);
           let output = this.sigmoid (tmp_u, this.prop_c, this.prop_k);
           for (let i in output) {
             output[i] += this.input[i];
@@ -345,6 +357,7 @@ function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
           tmp[i] += Math.pow (Math.random(), 3) * this.properties[i][0];
         }
       }
+      //let output = this.tanh (tmp, this.prop_c, this.prop_k);
       let output = this.sigmoid (tmp, this.prop_c, this.prop_k);
 
       for (let i in this.input) {
@@ -363,28 +376,28 @@ function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
   //let neuro_sim = new Simulation (all_ids, dirMat (all_nodes, all_ids));
   //neuro_sim.Noise = true;
   neuro_sim.Input = generateInVec (all_ids, connectome);
-  let ctr = 0;
+  //let ctr = 0;
   writeEpochsTable (0, all_ids, neuro_sim.Input);
   for (let i = 0; i < neuro_graph.getStats().nr_nodes; ++i) { //e.g. i < 3 for the 3rd epoch
     let output = neuro_sim.exec(i);
-    if (!neuro_sim.Undirected) {
+    /*if (!neuro_sim.Undirected) {
       //writeEpoch (i, all_ids, output, neuro_sim);
       ctr += vecEq (output, neuro_sim.Input) ? 1 : 0;
     }
     else if (!!(i % 2)) {
       //writeEpoch (i, all_ids, output, neuro_sim);
       ctr += vecEq (output, neuro_sim.Input) ? 1 : 0;
-    }
+    }*/
     writeEpochsTable (i + 1, all_ids, output);
-    if (ctr === 3) {
+    /*if (ctr === 3) {
       console.log ("Input === Output!\n");
       break;
-    }
+    }*/
     neuro_sim.Input = output;
   }
   //if (vecEq (output, neuro_sim.Input)) {console.log ("Input === Output!\n");}
 
-  fs.writeFileSync ('./mat_dir.txt', "");
+  /*fs.writeFileSync ('./mat_dir.txt', "");
   for (let i in neuro_sim.MatrixD) {
     for (let j in neuro_sim.MatrixD[i]) {
       fs.appendFileSync ('./mat_dir.txt', neuro_sim.MatrixD[i][j] + " ");
@@ -398,7 +411,7 @@ function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
       fs.appendFileSync ('./mat_und.txt', neuro_sim.MatrixU[i][j] + " ");
     }
     fs.appendFileSync ('./mat_und.txt', "\n");
-  }
+  }*/
 //------------------------------------------------------------------------------
 
 });
