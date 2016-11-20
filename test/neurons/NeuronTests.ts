@@ -9,8 +9,8 @@ var expect = chai.expect;
 
 describe('NEURON TESTS', () => {
   
-  it('should test the successful graphinius import', () => {
-    expect( Neuron.neuron ).to.equal("Neuron!");
-  });  
+//  it('should test the successful graphinius import', () => {
+//    expect( Neuron.neuron ).to.equal("Neuron!");
+//  });  
   
 });

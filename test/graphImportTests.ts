@@ -6,8 +6,11 @@ import * as $G from 'graphinius';
 // console.log($G);
 import * as fs from 'fs';
 
-import * as $C from './neuro_dd6_mi';
-//import * as $C from './abc';
+//import * as $C from './neuro_dd6_mi';
+import * as $C from './abc';
+
+import simulation from '../src/Simulation';
+
 let connectome = JSON.parse(JSON.stringify($C.CONFIG));
 
 var expect = chai.expect;
@@ -24,9 +27,9 @@ var e_1: $G.core.IBaseEdge,
 
 describe('GRAPHINIUS IMPORT TESTS', () => {
   
-  it('should test the successful graphinius import', () => {
-    expect( Neuron.neuron ).to.equal("Neuron!");
-  });
+//  it('should test the successful graphinius import', () => {
+//    expect( Neuron.neuron ).to.equal("Neuron!");
+//  });
   
   it('should have successfully imported graphinius and be able to instantiate a graph', () => {
     graph = new $G.core.BaseGraph("Test Graph Alpha");
@@ -55,8 +58,8 @@ describe('GRAPHINIUS IMPORT TESTS', () => {
   
   
   it('should import a graph from a valid json file', () => {
-    var json_file = "./input_data/neuro_dd6_mi.json";
-    //let json_file = "./input_data/abc.json";
+    //var json_file = "./input_data/neuro_dd6_mi.json";
+    let json_file = "./input_data/abc.json";
     //let json_file = "./input_data/muscle.json";
     //let json_file = "./input_data/neuro_muscle.json";
     var jsonReader = new $G.input.JSONInput(true, false, true);
@@ -175,6 +178,7 @@ describe('GRAPHINIUS IMPORT TESTS', () => {
       median_ind += all_nodes[i].inDegree();
       median_outd += all_nodes[i].outDegree();
     }
+    console.log (median_degree);
     median_dfs /= stats.nr_nodes;
     median_degree /= stats.nr_nodes;
     median_ind /= stats.nr_nodes;
@@ -301,6 +305,8 @@ describe('GRAPHINIUS IMPORT TESTS', () => {
     //console.log ("\nNumber of components is: " + $G.search.DFS (neuro_graph, neuro_graph.getRandomNode()).length + "\n");
     */
 //------------------------------------------------------------------------------
+    let sim = new simulation (neuro_graph);
+    sim.exec();
   });
   
 });

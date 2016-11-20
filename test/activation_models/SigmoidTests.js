@@ -2,8 +2,8 @@
 "use strict";
 var chai = require('chai');
 // import * as BCM from '../../src/learning_models/BCM';
-var $C = require('../neuro_dd6_mi');
-//import * as $C from '../abc';
+//import * as $C from '../neuro_dd6_mi';
+var $C = require('../abc');
 //import * as $C from '../muscle';
 var $G = require('graphinius');
 //let $G = require('graphinius').$G;
@@ -14,8 +14,8 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
         expect(true).to.be.true;
     });
     //------------------------------------------------------------------------------
-    var json_file = "./input_data/neuro_dd6_mi.json";
-    //let json_file = "./input_data/abc.json";
+    //let json_file = "./input_data/neuro_dd6_mi.json";
+    var json_file = "./input_data/abc.json";
     //let json_file = "./input_data/muscle.json";
     var jsonReader = new $G.input.JSONInput(true, false, true);
     var neuro_graph = jsonReader.readFromJSONFile(json_file);
@@ -45,7 +45,8 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
         var input = [];
         for (var i in all_ids) {
             //input[i] = connectome.data[all_ids[i]].type === "SensoryNeuron" ? 1 : 0;
-            input[i] = (all_ids[i] === "ADAL" || all_ids[i] === "ADAR") ? 0.2 : 0;
+            //input[i] = (all_ids[i] === "ADAL" || all_ids[i] === "ADAR") ? 0.2 : 0;
+            input[i] = (all_ids[i] === "A" || all_ids[i] === "B") ? 0.8 : 0;
         }
         return input;
     }
@@ -321,6 +322,19 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
             }
             return ans;
         };
+        Simulation.prototype.sin = function (x) {
+            var ans = [];
+            for (var i in x) {
+                ans[i] = Math.sin(x[i]);
+                if (ans[i] >= 0.999) {
+                    ans[i] = 1;
+                }
+                else if (ans[i] <= -0.999) {
+                    ans[i] = -1;
+                }
+            }
+            return ans;
+        };
         // Private method for the tanh activation function
         Simulation.prototype.tanh = function (x, c, k) {
             var ans = [];
@@ -349,9 +363,11 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
                 if (!!!(epoch % 2)) {
                     //let output = this.tanh (tmp_u, this.prop_c, this.prop_k);
                     var output_1 = this.sigmoid(tmp_u, this.prop_c, this.prop_k);
+                    //let output = this.sin (tmp_u);
                     for (var i in output_1) {
                         output_1[i] += this.input[i];
                         output_1[i] = output_1[i] > this.properties[i][0] ? this.properties[i][0] : output_1[i];
+                        output_1[i] = output_1[i] < -1 ? -1 : output_1[i];
                     }
                     return output_1;
                 }
@@ -374,6 +390,7 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
             }
             //let output = this.tanh (tmp, this.prop_c, this.prop_k);
             var output = this.sigmoid(tmp, this.prop_c, this.prop_k);
+            //let output = this.sin (tmp);
             for (var i in this.input) {
                 this.refraction[i] -= this.refraction[i] !== 1 ? 1 : 0;
                 this.refraction[i] = this.input[i] >= this.threshold[i] ? 3 : this.refraction[i]; //Threshold should be ~3 times greater -> empiric value
@@ -385,8 +402,8 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', function () {
     //------------------------------------------------------------------------------
     //------------------------------------------------------------------------------
     //------------------------------------------------------------------------------
-    var neuro_sim = new Simulation(all_ids, dirMat(all_nodes, all_ids), undMat(all_nodes, all_ids));
-    //let neuro_sim = new Simulation (all_ids, dirMat (all_nodes, all_ids));
+    //let neuro_sim = new Simulation (all_ids, dirMat (all_nodes, all_ids), undMat (all_nodes, all_ids));
+    var neuro_sim = new Simulation(all_ids, dirMat(all_nodes, all_ids));
     //neuro_sim.Noise = true;
     neuro_sim.Input = generateInVec(all_ids, connectome);
     //let ctr = 0;

@@ -2,8 +2,8 @@
 
 import * as chai from 'chai';
 // import * as BCM from '../../src/learning_models/BCM';
-import * as $C from '../neuro_dd6_mi';
-//import * as $C from '../abc';
+//import * as $C from '../neuro_dd6_mi';
+import * as $C from '../abc';
 //import * as $C from '../muscle';
 import * as $G from 'graphinius';
 
@@ -21,8 +21,8 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', () => {
   });
   
 //------------------------------------------------------------------------------
-  let json_file = "./input_data/neuro_dd6_mi.json";
-  //let json_file = "./input_data/abc.json";
+  //let json_file = "./input_data/neuro_dd6_mi.json";
+  let json_file = "./input_data/abc.json";
   //let json_file = "./input_data/muscle.json";
   let jsonReader = new $G.input.JSONInput(true, false, true);
   let neuro_graph = jsonReader.readFromJSONFile(json_file);
@@ -56,7 +56,9 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', () => {
     let input: number[] = [];
     for (let i in all_ids) {
       //input[i] = connectome.data[all_ids[i]].type === "SensoryNeuron" ? 1 : 0;
-      input[i] = (all_ids[i] === "ADAL" || all_ids[i] === "ADAR") ? 0.2 : 0;
+      //input[i] = (all_ids[i] === "ADAL" || all_ids[i] === "ADAR") ? 0.2 : 0;
+      input[i] = (all_ids[i] === "A" || all_ids[i] === "B") ? 0.8 : 0;
+      //input[i] = all_ids[i] === "A" ? 1 : 0;
     }
     return input;
   }
@@ -307,6 +309,16 @@ function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
 	    return ans;
     }
 
+    private sin (x: number[]) {
+      let ans: number[] = [];
+      for (let i in x) {
+        ans[i] = Math.sin (x[i]);
+        if (ans[i] >= 0.999) {ans[i] = 1;}
+        else if (ans[i] <= -0.999) {ans[i] = -1;}
+      }
+      return ans;
+    }
+
     // Private method for the tanh activation function
     private tanh (x: number[], c : number[], k: number[]) {
       let ans: number[] = [];
@@ -333,9 +345,11 @@ function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
         if (!!!(epoch % 2)) {
           //let output = this.tanh (tmp_u, this.prop_c, this.prop_k);
           let output = this.sigmoid (tmp_u, this.prop_c, this.prop_k);
+          //let output = this.sin (tmp_u);
           for (let i in output) {
             output[i] += this.input[i];
             output[i] = output[i] > this.properties[i][0] ? this.properties[i][0] : output[i];
+            output[i] = output[i] < -1 ? -1 : output[i];
           }
           return output;
         }
@@ -359,6 +373,7 @@ function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
       }
       //let output = this.tanh (tmp, this.prop_c, this.prop_k);
       let output = this.sigmoid (tmp, this.prop_c, this.prop_k);
+      //let output = this.sin (tmp);
 
       for (let i in this.input) {
         this.refraction[i] -= this.refraction[i] !== 1 ? 1 : 0;
@@ -372,8 +387,8 @@ function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
 
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
-  let neuro_sim = new Simulation (all_ids, dirMat (all_nodes, all_ids), undMat (all_nodes, all_ids));
-  //let neuro_sim = new Simulation (all_ids, dirMat (all_nodes, all_ids));
+  //let neuro_sim = new Simulation (all_ids, dirMat (all_nodes, all_ids), undMat (all_nodes, all_ids));
+  let neuro_sim = new Simulation (all_ids, dirMat (all_nodes, all_ids));
   //neuro_sim.Noise = true;
   neuro_sim.Input = generateInVec (all_ids, connectome);
   //let ctr = 0;

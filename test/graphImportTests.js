@@ -1,19 +1,19 @@
 /// <reference path="../typings/tsd.d.ts" />
 "use strict";
 var chai = require('chai');
-var Neuron = require('../src/neurons/Neuron');
 var $G = require('graphinius');
-var $C = require('./neuro_dd6_mi');
-//import * as $C from './abc';
+//import * as $C from './neuro_dd6_mi';
+var $C = require('./abc');
+var Simulation_1 = require('../src/Simulation');
 var connectome = JSON.parse(JSON.stringify($C.CONFIG));
 var expect = chai.expect;
 var graph;
 var n_a, n_b, n_c, n_d;
 var e_1, e_2, e_3, e_4;
 describe('GRAPHINIUS IMPORT TESTS', function () {
-    it('should test the successful graphinius import', function () {
-        expect(Neuron.neuron).to.equal("Neuron!");
-    });
+    //  it('should test the successful graphinius import', () => {
+    //    expect( Neuron.neuron ).to.equal("Neuron!");
+    //  });
     it('should have successfully imported graphinius and be able to instantiate a graph', function () {
         graph = new $G.core.BaseGraph("Test Graph Alpha");
         n_a = graph.addNode("A");
@@ -37,8 +37,8 @@ describe('GRAPHINIUS IMPORT TESTS', function () {
         var pfs_res = $G.search.PFS(graph, n_a);
     });
     it('should import a graph from a valid json file', function () {
-        var json_file = "./input_data/neuro_dd6_mi.json";
-        //let json_file = "./input_data/abc.json";
+        //var json_file = "./input_data/neuro_dd6_mi.json";
+        var json_file = "./input_data/abc.json";
         //let json_file = "./input_data/muscle.json";
         //let json_file = "./input_data/neuro_muscle.json";
         var jsonReader = new $G.input.JSONInput(true, false, true);
@@ -154,6 +154,7 @@ describe('GRAPHINIUS IMPORT TESTS', function () {
             median_ind += all_nodes[i].inDegree();
             median_outd += all_nodes[i].outDegree();
         }
+        console.log(median_degree);
         median_dfs /= stats.nr_nodes;
         median_degree /= stats.nr_nodes;
         median_ind /= stats.nr_nodes;
@@ -274,5 +275,7 @@ describe('GRAPHINIUS IMPORT TESTS', function () {
         //console.log ("\nNumber of components is: " + $G.search.DFS (neuro_graph, neuro_graph.getRandomNode()).length + "\n");
         */
         //------------------------------------------------------------------------------
+        var sim = new Simulation_1.default(neuro_graph);
+        sim.exec();
     });
 });
