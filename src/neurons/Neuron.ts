@@ -6,18 +6,22 @@ import * as $G from 'graphinius';
 
 export default class Neuron {
   private _activation: number;
+  //private _color: Color;
+  private _color: number[];
   private _threshold: number;
   private _c: number; // amplitude of the activation
   private _k: number; // steepness of the activation function
   //private _refraction = 1e6;
-  private _refraction = 1;
+  private _refraction: number;
 
   //----------------------------------------------------------------------------
   constructor (private _node: $G.core.IBaseNode) {
     this._activation = 0;
+    this._color = [];
     this._threshold = 0.6;
     this._c = 1;
     this._k = 15;
+    this._refraction = 1;
   }
 
   //----------------------------------------------------------------------------
@@ -27,6 +31,11 @@ export default class Neuron {
   get C() {return this._c;}
   get K() {return this._k;}
   get Refraction() {return this._refraction;}
+
+  get Color() {
+    // Calculate the color palette according to the activation
+    return this._color;
+  }
 
   //----------------------------------------------------------------------------
   set Activation (activation: number) {this._activation = activation;}
