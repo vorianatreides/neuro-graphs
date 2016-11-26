@@ -1,10 +1,12 @@
 /// <reference path="./../typings/tsd.d.ts" />
 
 import * as $G from 'graphinius';
-import Neuron from './neurons/Neuron';
+import * as $N from './neurons/Neuron';
 
-export default class Simulation {
-  private _neuron_list: Neuron[];
+let Neuron = $N.Neuron;
+
+class Simulation {
+  private _neuron_list: $N.Neuron[];
   private _activation_model: string;
   private _all_ids: {[id: string]: number;}[]
   private _epoch: number;
@@ -227,4 +229,4 @@ export default class Simulation {
   }
 }
 
-//export { Simulation };
+export { Simulation };

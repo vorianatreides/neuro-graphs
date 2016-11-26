@@ -1,6 +1,7 @@
 /// <reference path="./../typings/tsd.d.ts" />
 "use strict";
-var Neuron_1 = require('./neurons/Neuron');
+var $N = require('./neurons/Neuron');
+var Neuron = $N.Neuron;
 var Simulation = (function () {
     //----------------------------------------------------------------------------
     function Simulation(_graph) {
@@ -16,7 +17,7 @@ var Simulation = (function () {
         var all_nodes = this._graph.getNodes();
         var ctr = 0;
         for (var i in all_nodes) {
-            this._neuron_list.push(new Neuron_1.default(all_nodes[i]));
+            this._neuron_list.push(new Neuron(all_nodes[i]));
             this._all_ids[i] = ctr++;
         }
         this.activationFunc = this.sigmoid;
@@ -240,6 +241,4 @@ var Simulation = (function () {
     };
     return Simulation;
 }());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = Simulation;
-//export { Simulation };
+exports.Simulation = Simulation;

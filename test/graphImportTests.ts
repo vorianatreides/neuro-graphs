@@ -9,7 +9,7 @@ import * as fs from 'fs';
 //import * as $C from './neuro_dd6_mi';
 import * as $C from './abc';
 
-import simulation from '../src/Simulation';
+import * as simulation from '../src/Simulation';
 
 let connectome = JSON.parse(JSON.stringify($C.CONFIG));
 
@@ -305,7 +305,7 @@ describe('GRAPHINIUS IMPORT TESTS', () => {
     //console.log ("\nNumber of components is: " + $G.search.DFS (neuro_graph, neuro_graph.getRandomNode()).length + "\n");
     */
 //------------------------------------------------------------------------------
-    let sim = new simulation (neuro_graph);
+    let sim = new simulation.Simulation (neuro_graph);
     //console.log (!!sim.Graph.getStats().nr_und_edges);
     //sim.setActivationModel ("step");
     //sim.Sine = true;

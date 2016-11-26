@@ -5,7 +5,7 @@ let THREE = require ('three');
 
 //var neuron = "Neuron!";
 
-export default class Neuron {
+class Neuron {
   private _activation: number;
   private _color: any;
   private _threshold: number;
@@ -81,4 +81,4 @@ export default class Neuron {
   }
 }
 
-//export { Neuron };
+export { Neuron };
