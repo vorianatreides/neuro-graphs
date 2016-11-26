@@ -4,7 +4,7 @@ var chai = require('chai');
 var $G = require('graphinius');
 //import * as $C from './neuro_dd6_mi';
 var $C = require('./abc');
-var Simulation_1 = require('../src/Simulation');
+var simulation = require('../src/Simulation');
 var connectome = JSON.parse(JSON.stringify($C.CONFIG));
 var expect = chai.expect;
 var graph;
@@ -275,7 +275,7 @@ describe('GRAPHINIUS IMPORT TESTS', function () {
         //console.log ("\nNumber of components is: " + $G.search.DFS (neuro_graph, neuro_graph.getRandomNode()).length + "\n");
         */
         //------------------------------------------------------------------------------
-        var sim = new Simulation_1.default(neuro_graph);
+        var sim = new simulation.Simulation(neuro_graph);
         //console.log (!!sim.Graph.getStats().nr_und_edges);
         //sim.setActivationModel ("step");
         //sim.Sine = true;

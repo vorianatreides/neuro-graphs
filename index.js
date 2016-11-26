@@ -9,12 +9,11 @@ var simulation = require ('./src/Simulation'),
 var out = typeof window !== 'undefined' ? window : global;
 
 
-out.NeuroGraphs = {
-	neuron: neuron,
-	simulation: simulation,
-	test: 'blahoo_test'
+out = {
+	Neuron: neuron,
+	Simulation: simulation
 };
 
 module.exports = {
-	$Neuro : out.NeuroGraphs
+	$NG : out
 };

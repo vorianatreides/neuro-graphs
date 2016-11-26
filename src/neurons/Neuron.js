@@ -86,6 +86,4 @@ var Neuron = (function () {
     };
     return Neuron;
 }());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = Neuron;
-//export { Neuron };
+exports.Neuron = Neuron;
