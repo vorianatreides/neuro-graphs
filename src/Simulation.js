@@ -32,10 +32,14 @@ var Simulation = (function () {
         get: function () { return this._sine; },
         set: function (sine) {
             this._sine = sine;
-            this._activation_model = "oscillation";
-            this.activationFunc = this.sin;
-            this._bounds[0] = -1;
-            this._bounds[1] = 1;
+            if (sine) {
+                this.activationFunc = this.sin;
+                this._bounds[0] = -1;
+                this._bounds[1] = 1;
+            }
+            else {
+                this.setActivationModel(this._activation_model);
+            }
         },
         enumerable: true,
         configurable: true
@@ -54,6 +58,13 @@ var Simulation = (function () {
     });
     Object.defineProperty(Simulation.prototype, "Epoch", {
         get: function () { return this._epoch; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Simulation.prototype, "Undirected", {
+        get: function () { return this._undirected; },
+        set: function (undirected) { this._undirected = undirected; } // Controversial !!!
+        ,
         enumerable: true,
         configurable: true
     });
@@ -208,6 +219,7 @@ var Simulation = (function () {
             default:
                 throw new Error("Error! Provided activation model is not implemented yet!");
         }
+        this._sine = false;
     };
     // Public method for the simulation itself
     Simulation.prototype.exec = function (nr_epochs) {

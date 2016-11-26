@@ -157,7 +157,7 @@ export default class Simulation {
   }
 
   // Private method to calculate one epoch
-  private calculateEpoch() {
+  calculateEpoch() {
     let tmp = this.calcInput();
     let output = this.activationFunc (tmp);
 
