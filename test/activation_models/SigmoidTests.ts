@@ -57,8 +57,11 @@ describe('ACTIVATION FUNCTION - SIGMOID TESTS - ', () => {
     for (let i in all_ids) {
       //input[i] = connectome.data[all_ids[i]].type === "SensoryNeuron" ? 1 : 0;
       //input[i] = (all_ids[i] === "ADAL" || all_ids[i] === "ADAR") ? 0.2 : 0;
-      input[i] = (all_ids[i] === "A" || all_ids[i] === "B") ? 0.8 : 0;
+      //input[i] = (all_ids[i] === "A" || all_ids[i] === "B") ? 0.8 : 0;
       //input[i] = all_ids[i] === "A" ? 1 : 0;
+      if (all_ids[i] === "A") {input[i] = 0.999999;}
+      else if (all_ids[i] === "B") {input[i] = 0.5;}
+      else {input[i] = 0;}
     }
     return input;
   }
@@ -342,7 +345,7 @@ function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
       if (this.undirected) {
         tmp_u = matVecProduct (this.graph_u, this.input);
         tmp_u = vecMath (tmp_u, vecMath (this.threshold, this.refraction, "*"), "-");
-        if (!!!(epoch % 2)) {
+        /*if (!!!(epoch % 2)) {
           //let output = this.tanh (tmp_u, this.prop_c, this.prop_k);
           let output = this.sigmoid (tmp_u, this.prop_c, this.prop_k);
           //let output = this.sin (tmp_u);
@@ -352,7 +355,7 @@ function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
             output[i] = output[i] < -1 ? -1 : output[i];
           }
           return output;
-        }
+        }*/
       }
 
       let tmp = matVecProduct (this.graph_d, this.input);
@@ -387,8 +390,8 @@ function writeEpochsTable(epoch: number, all_ids: string[], vector: number[]) {
 
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
-  //let neuro_sim = new Simulation (all_ids, dirMat (all_nodes, all_ids), undMat (all_nodes, all_ids));
-  let neuro_sim = new Simulation (all_ids, dirMat (all_nodes, all_ids));
+  let neuro_sim = new Simulation (all_ids, dirMat (all_nodes, all_ids), undMat (all_nodes, all_ids));
+  //let neuro_sim = new Simulation (all_ids, dirMat (all_nodes, all_ids));
   //neuro_sim.Noise = true;
   neuro_sim.Input = generateInVec (all_ids, connectome);
   //let ctr = 0;

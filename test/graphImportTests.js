@@ -276,6 +276,10 @@ describe('GRAPHINIUS IMPORT TESTS', function () {
         */
         //------------------------------------------------------------------------------
         var sim = new Simulation_1.default(neuro_graph);
+        //console.log (!!sim.Graph.getStats().nr_und_edges);
+        //sim.setActivationModel ("step");
+        //sim.Sine = true;
         sim.exec();
+        //console.log(sim.Graph.getNodeById("B").connNodes());
     });
 });

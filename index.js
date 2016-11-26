@@ -3,10 +3,15 @@
 // var $Sangreea 	= require("./dist/SaNGreeA/SaNGreeA.js");
 
 
+var simulation = require ('./src/Simulation'),
+    neuron     = require ('./src/neurons/Neuron');
+
 var out = typeof window !== 'undefined' ? window : global;
 
 
 out.NeuroGraphs = {
+	neuron: neuron,
+	simulation: simulation,
 	test: 'blahoo_test'
 };
 
