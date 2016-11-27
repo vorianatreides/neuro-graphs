@@ -19,24 +19,7 @@ class Simulation {
 
   //----------------------------------------------------------------------------
   constructor (private _graph: $G.core.IGraph) {
-    this._neuron_list = [];
-    this._activation_model = "sigmoidal";
-    this._bounds = [0, 1];
-    this._all_ids = [];
-    this._epoch = 0;
-    this._sine = false;
-    this._noise = false; // Should biologically speaking be true!
-    this._undirected = !!this._graph.getStats().nr_und_edges; // Should normally be true
-
-    let all_nodes = this._graph.getNodes();
-    let ctr = 0;
-    for (let i in all_nodes) {
-      this._neuron_list.push (new Neuron(all_nodes[i]));
-      this._all_ids[i] = ctr++;
-    }
-
-    this.activationFunc = this.sigmoid;
-    this.generateInVec();
+    this.setDefaults();
   }
 
   //----------------------------------------------------------------------------
@@ -58,15 +41,42 @@ class Simulation {
     }
     else {this.setActivationModel (this._activation_model);}
   }
+  set Graph (graph: $G.core.IGraph) {
+    this._graph = graph;
+    this.setDefaults();
+  }
   set Undirected (undirected: boolean) {this._undirected = undirected;} // Controversial !!!
 
   //----------------------------------------------------------------------------
+  // Private method to set all default values
+  private setDefaults() {
+    this._neuron_list = [];
+    this._activation_model = "sigmoidal";
+    this._bounds = [0, 1];
+    this._all_ids = [];
+    this._epoch = 0;
+    this._sine = false;
+    this._noise = false; // Should biologically speaking be true!
+    this._undirected = !!this._graph.getStats().nr_und_edges; // Should normally be true
+
+    let all_nodes = this._graph.getNodes();
+    let ctr = 0;
+    for (let i in all_nodes) {
+      this._neuron_list.push (new Neuron(all_nodes[i]));
+      this._all_ids[i] = ctr++;
+    }
+
+    this.activationFunc = this.sigmoid;
+    this.generateInVec();
+  }
+  
   // Private method to generate the initial conditions
   private generateInVec () {
     for (let i in this._neuron_list) {
+      if (Math.random() <= 0.15) {this._neuron_list[i].Activation = this._neuron_list[i].C * Math.random();}
       //this._neuron_list[i].Activation = this._neuron_list[i].Node.getID() === "A" || this._neuron_list[i].Node.getID() === "B" ? 0.8 : 0;
-      if (this._neuron_list[i].Node.getID() === "A") {this._neuron_list[i].Activation = 0.999999;}
-      if (this._neuron_list[i].Node.getID() === "B") {this._neuron_list[i].Activation = 0.5;}
+      //if (this._neuron_list[i].Node.getID() === "A") {this._neuron_list[i].Activation = 0.999999;}
+      //if (this._neuron_list[i].Node.getID() === "B") {this._neuron_list[i].Activation = 0.5;}
     }
   }
 
@@ -158,7 +168,9 @@ class Simulation {
     return ans;
   }
 
-  // Private method to calculate one epoch
+  //----------------------------------------------------------------------------
+  
+  // Public method to calculate one epoch
   calculateEpoch() {
     let tmp = this.calcInput();
     let output = this.activationFunc (tmp);
@@ -166,12 +178,12 @@ class Simulation {
     for (let i in this._neuron_list) {
       this._neuron_list[i].Refraction -= this._neuron_list[i].Refraction !== 1 ? 1 : 0;
       this._neuron_list[i].Refraction = this._neuron_list[i].Activation >= this._neuron_list[i].Threshold ? 3 : this._neuron_list[i].Refraction;
+      this._neuron_list[i].Activation = output[i];
+      this._neuron_list[i].setColor (this._bounds[0], this._bounds[1]);
     }
 
     return output;
   }
-
-  //----------------------------------------------------------------------------
 
   // Public method to set a new graph for the simulation
   //setGraph (graph: $G.core.IGraph) {
@@ -219,11 +231,7 @@ class Simulation {
     }
     for (let i = 0; i < nr_epochs; ++i) {
       console.log();
-      let output = this.calculateEpoch();
-      for (let j in this._neuron_list) {
-        this._neuron_list[j].Activation = output[j];
-        this._neuron_list[j].setColor (this._bounds[0], this._bounds[1]);
-      }
+      this.calculateEpoch();
       this.writeEpochsTable(i+1);
     }
   }
