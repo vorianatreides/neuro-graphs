@@ -58,6 +58,40 @@ var Simulation = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Simulation.prototype, "Bounds", {
+        get: function () { return this._bounds; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Simulation.prototype, "Neurons", {
+        get: function () { return this._neuron_list; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Simulation.prototype, "Globals", {
+        get: function () { return this._globals; },
+        set: function (globals) { this._globals = globals; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Simulation.prototype, "Threshold", {
+        get: function () { return this._thresh; },
+        set: function (thresh) { this._thresh = thresh; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Simulation.prototype, "Amplitude", {
+        get: function () { return this._c; },
+        set: function (amp) { this._c = amp; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Simulation.prototype, "Steepness", {
+        get: function () { return this._k; },
+        set: function (steep) { this._k = steep; },
+        enumerable: true,
+        configurable: true
+    });
     //----------------------------------------------------------------------------
     // Private method to set all default values
     Simulation.prototype.setDefaults = function () {
@@ -69,6 +103,10 @@ var Simulation = (function () {
         this._sine = false;
         this._noise = false; // Should biologically speaking be true!
         this._undirected = !!this._graph.getStats().nr_und_edges; // Should normally be true
+        this._globals = true;
+        this._thresh = 0.6;
+        this._c = 1;
+        this._k = 15;
         var all_nodes = this._graph.getNodes();
         var ctr = 0;
         for (var i in all_nodes) {
@@ -81,18 +119,28 @@ var Simulation = (function () {
     // Private method to generate the initial conditions
     Simulation.prototype.generateInVec = function () {
         for (var i in this._neuron_list) {
-            if (Math.random() <= 0.15) {
-                this._neuron_list[i].Activation = this._neuron_list[i].C * Math.random();
+            //if (Math.random() <= 0.05) {this._neuron_list[i].Activation = this._c * Math.random();}
+            //if (Math.random() <= 0.05) {this._neuron_list[i].Activation = this._neuron_list[i].C * Math.random();}
+            if (this._neuron_list[i].Node.getID() === "A") {
+                this._neuron_list[i].Activation = 0.999999;
+            }
+            if (this._neuron_list[i].Node.getID() === "B") {
+                this._neuron_list[i].Activation = 0.5;
             }
         }
     };
     // Private method for the sigmoidal activation function
     Simulation.prototype.sigmoid = function (input) {
         var ans = [];
-        for (var i in this._neuron_list) {
-            ans[i] = this._neuron_list[i].C / (1 + Math.pow(Math.E, -this._neuron_list[i].K * input[i]));
-            if (ans[i] >= (this._neuron_list[i].C - 0.001)) {
-                ans[i] = this._neuron_list[i].C;
+        // for (let i in this._neuron_list) {
+        //   ans[i] = this._neuron_list[i].C / (1 + Math.pow (Math.E, -this._neuron_list[i].K*input[i]));
+        //   if (ans[i] >= (this._neuron_list[i].C - 0.001)) {ans[i] = this._neuron_list[i].C;}
+        //   else if (ans[i] <= 0.001) {ans[i] = 0;}
+        // }
+        for (var i in input) {
+            ans[i] = this._c / (1 + Math.pow(Math.E, -this._k * input[i]));
+            if (ans[i] >= (this._c - 0.001)) {
+                ans[i] = this._c;
             }
             else if (ans[i] <= 0.001) {
                 ans[i] = 0;
@@ -103,13 +151,18 @@ var Simulation = (function () {
     // Private method for the tanh activation function
     Simulation.prototype.tanh = function (input) {
         var ans = [];
-        for (var i in this._neuron_list) {
-            ans[i] = 2 * this._neuron_list[i].C / (1 + Math.pow(Math.E, -2 * this._neuron_list[i].K * input[i])) - 1;
-            if (ans[i] >= (this._neuron_list[i].C - 0.001)) {
-                ans[i] = this._neuron_list[i].C;
+        // for (let i in this._neuron_list) {
+        //   ans[i] = 2 * this._neuron_list[i].C / (1 + Math.pow (Math.E, -2*this._neuron_list[i].K*input[i])) - 1;
+        //   if (ans[i] >= (this._neuron_list[i].C - 0.001)) {ans[i] = this._neuron_list[i].C;}
+        //   else if (ans[i] <= (0.001 - this._neuron_list[i].C)) {ans[i] = -this._neuron_list[i].C;}
+        // }
+        for (var i in input) {
+            ans[i] = 2 * this._c / (1 + Math.pow(Math.E, -2 * this._k * input[i])) - 1;
+            if (ans[i] >= (this._c - 0.001)) {
+                ans[i] = this._c;
             }
-            else if (ans[i] <= (0.001 - this._neuron_list[i].C)) {
-                ans[i] = -this._neuron_list[i].C;
+            else if (ans[i] <= (0.001 - this._c)) {
+                ans[i] = -this._c;
             }
         }
         return ans;
@@ -117,16 +170,22 @@ var Simulation = (function () {
     // Private method for the Heaviside (unit) step activation function
     Simulation.prototype.step = function (input) {
         var ans = [];
-        for (var i in this._neuron_list) {
-            ans[i] = input[i] <= 0 ? 0 : (this._neuron_list[i].C);
+        // for (let i in this._neuron_list) {
+        //   ans[i] = input[i] <= 0 ? 0 : (this._neuron_list[i].C);
+        // }
+        for (var i in input) {
+            ans[i] = input[i] <= 0 ? 0 : this._c;
         }
         return ans;
     };
     // Private method for a simple and uncorrelated sinusoidal oscillation of neurons
     Simulation.prototype.sin = function (input) {
         var ans = [];
-        for (var i in this._neuron_list) {
-            ans[i] = this._neuron_list[i].C * Math.sin(this._neuron_list[i].K * input[i]);
+        // for (let i in this._neuron_list) {
+        //   ans[i] = this._neuron_list[i].C * Math.sin (this._neuron_list[i].K * input[i]);
+        // }
+        for (var i in input) {
+            ans[i] = this._c * Math.sin(this._k * input[i]);
         }
         return ans;
     };
@@ -158,7 +217,7 @@ var Simulation = (function () {
                 var key = this._all_ids[connections[j].node.getID()];
                 tmp += connections[j].edge.getWeight() * this._neuron_list[key].Activation;
             }
-            tmp -= (this._neuron_list[i].Refraction * this._neuron_list[i].Threshold);
+            tmp -= this._neuron_list[i].Refraction * this._neuron_list[i].Threshold;
             if (this._noise) {
                 tmp += Math.pow(Math.random(), 3) * this._neuron_list[i].C;
             }
@@ -170,7 +229,7 @@ var Simulation = (function () {
                     var key = this._all_ids[connections[j].node.getID()];
                     tmp += connections[j].edge.getWeight() * this._neuron_list[key].Activation;
                 }
-                tmp -= (this._neuron_list[i].Refraction * this._neuron_list[i].Threshold);
+                tmp -= this._neuron_list[i].Refraction * this._neuron_list[i].Threshold;
                 if (this._noise) {
                     tmp += Math.pow(Math.random(), 3) * this._neuron_list[i].C;
                 }
@@ -182,8 +241,8 @@ var Simulation = (function () {
     //----------------------------------------------------------------------------
     // Public method to calculate one epoch
     Simulation.prototype.calculateEpoch = function () {
-        var tmp = this.calcInput();
-        var output = this.activationFunc(tmp);
+        // let tmp = this.calcInput();
+        var output = this.activationFunc(this.calcInput());
         for (var i in this._neuron_list) {
             this._neuron_list[i].Refraction -= this._neuron_list[i].Refraction !== 1 ? 1 : 0;
             this._neuron_list[i].Refraction = this._neuron_list[i].Activation >= this._neuron_list[i].Threshold ? 3 : this._neuron_list[i].Refraction;
@@ -192,10 +251,6 @@ var Simulation = (function () {
         }
         return output;
     };
-    // Public method to set a new graph for the simulation
-    //setGraph (graph: $G.core.IGraph) {
-    //  this = new Simulation (graph);
-    //}
     // Public method to
     Simulation.prototype.setActivationModel = function (model) {
         switch (model) {
@@ -236,8 +291,7 @@ var Simulation = (function () {
             this._neuron_list[j].setColor(this._bounds[0], this._bounds[1]);
         }
         for (var i = 0; i < nr_epochs; ++i) {
-            console.log();
-            var output = this.calculateEpoch();
+            this.calculateEpoch();
             this.writeEpochsTable(i + 1);
         }
     };

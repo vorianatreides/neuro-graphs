@@ -34,8 +34,8 @@ let CONFIG = {
         "true": true
       },
       "coords": {
-        "x": 1,
-        "y": -1,
+        "x": 50,
+        "y": -50,
         "z": 0
       },
       "edges": [
@@ -58,8 +58,8 @@ let CONFIG = {
         "true": true
       },
       "coords": {
-        "x": 1,
-        "y": 1,
+        "x": 50,
+        "y": 50,
         "z": 0
       },
       "edges": [
@@ -82,7 +82,7 @@ let CONFIG = {
         "true": true
       },
       "coords": {
-        "x": 2,
+        "x": 100,
         "y": 0,
         "z": 0
       },
