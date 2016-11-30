@@ -92,6 +92,12 @@ var Simulation = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Simulation.prototype, "Refraction", {
+        get: function () { return this._refr; },
+        set: function (refr) { this._refr = refr; },
+        enumerable: true,
+        configurable: true
+    });
     //----------------------------------------------------------------------------
     // Private method to set all default values
     Simulation.prototype.setDefaults = function () {
@@ -107,6 +113,7 @@ var Simulation = (function () {
         this._thresh = 0.6;
         this._c = 1;
         this._k = 15;
+        this._refr = 5;
         var all_nodes = this._graph.getNodes();
         var ctr = 0;
         for (var i in all_nodes) {
@@ -114,20 +121,7 @@ var Simulation = (function () {
             this._all_ids[i] = ctr++;
         }
         this.activationFunc = this.sigmoid;
-        this.generateInVec();
-    };
-    // Private method to generate the initial conditions
-    Simulation.prototype.generateInVec = function () {
-        for (var i in this._neuron_list) {
-            //if (Math.random() <= 0.05) {this._neuron_list[i].Activation = this._c * Math.random();}
-            //if (Math.random() <= 0.05) {this._neuron_list[i].Activation = this._neuron_list[i].C * Math.random();}
-            if (this._neuron_list[i].Node.getID() === "A") {
-                this._neuron_list[i].Activation = 0.999999;
-            }
-            if (this._neuron_list[i].Node.getID() === "B") {
-                this._neuron_list[i].Activation = 0.5;
-            }
-        }
+        this.generateInVec(0);
     };
     // Private method for the sigmoidal activation function
     Simulation.prototype.sigmoid = function (input) {
@@ -164,6 +158,14 @@ var Simulation = (function () {
             else if (ans[i] <= (0.001 - this._c)) {
                 ans[i] = -this._c;
             }
+        }
+        return ans;
+    };
+    // Private method for the rectified linear unit activation function
+    Simulation.prototype.rlu = function (input) {
+        var ans = [];
+        for (var i in input) {
+            ans[i] = Math.max(0, this._k * input[i]);
         }
         return ans;
     };
@@ -217,9 +219,9 @@ var Simulation = (function () {
                 var key = this._all_ids[connections[j].node.getID()];
                 tmp += connections[j].edge.getWeight() * this._neuron_list[key].Activation;
             }
-            tmp -= this._neuron_list[i].Refraction * this._neuron_list[i].Threshold;
+            tmp -= this._neuron_list[i].Refraction * this._thresh;
             if (this._noise) {
-                tmp += Math.pow(Math.random(), 3) * this._neuron_list[i].C;
+                tmp += Math.random() * Math.random() * this._c;
             }
             ans[i] = tmp;
             if (this._undirected) {
@@ -229,9 +231,9 @@ var Simulation = (function () {
                     var key = this._all_ids[connections[j].node.getID()];
                     tmp += connections[j].edge.getWeight() * this._neuron_list[key].Activation;
                 }
-                tmp -= this._neuron_list[i].Refraction * this._neuron_list[i].Threshold;
+                tmp -= this._neuron_list[i].Refraction * this._thresh;
                 if (this._noise) {
-                    tmp += Math.pow(Math.random(), 3) * this._neuron_list[i].C;
+                    tmp += Math.random() * Math.random() * this._c;
                 }
                 ans[i] += tmp;
             }
@@ -239,19 +241,32 @@ var Simulation = (function () {
         return ans;
     };
     //----------------------------------------------------------------------------
+    // Public method to generate an input vector of activations
+    Simulation.prototype.generateInVec = function (percentage) {
+        for (var i in this._neuron_list) {
+            if (Math.random() <= percentage) {
+                this._neuron_list[i].Activation = this._c * Math.random();
+            }
+        }
+    };
     // Public method to calculate one epoch
     Simulation.prototype.calculateEpoch = function () {
-        // let tmp = this.calcInput();
         var output = this.activationFunc(this.calcInput());
         for (var i in this._neuron_list) {
-            this._neuron_list[i].Refraction -= this._neuron_list[i].Refraction !== 1 ? 1 : 0;
-            this._neuron_list[i].Refraction = this._neuron_list[i].Activation >= this._neuron_list[i].Threshold ? 3 : this._neuron_list[i].Refraction;
+            if (this._neuron_list[i].Refraction !== 1) {
+                this._neuron_list[i].Refraction /= 2;
+            }
+            if (this._neuron_list[i].Refraction < 1) {
+                this._neuron_list[i].Refraction = 1;
+            }
+            if (this._neuron_list[i].Activation >= this._thresh) {
+                this._neuron_list[i].Refraction = this._refr;
+            }
             this._neuron_list[i].Activation = output[i];
-            this._neuron_list[i].setColor(this._bounds[0], this._bounds[1]);
         }
         return output;
     };
-    // Public method to
+    // Public method to set the activation function
     Simulation.prototype.setActivationModel = function (model) {
         switch (model) {
             case "sigmoidal":
@@ -268,7 +283,7 @@ var Simulation = (function () {
                 break;
             case "rlu":
                 this._activation_model = model;
-                //this.activationFunc = this.rlu;
+                this.activationFunc = this.rlu;
                 this._bounds[0] = 0;
                 this._bounds[1] = Number.POSITIVE_INFINITY;
                 break;
@@ -287,9 +302,6 @@ var Simulation = (function () {
     Simulation.prototype.exec = function (nr_epochs) {
         if (nr_epochs === void 0) { nr_epochs = this._graph.getStats().nr_nodes; }
         this.writeEpochsTable(0);
-        for (var j in this._neuron_list) {
-            this._neuron_list[j].setColor(this._bounds[0], this._bounds[1]);
-        }
         for (var i = 0; i < nr_epochs; ++i) {
             this.calculateEpoch();
             this.writeEpochsTable(i + 1);

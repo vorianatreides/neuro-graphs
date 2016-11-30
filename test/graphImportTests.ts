@@ -306,11 +306,10 @@ describe('GRAPHINIUS IMPORT TESTS', () => {
     */
 //------------------------------------------------------------------------------
     let sim = new simulation.Simulation (neuro_graph);
-    //console.log (!!sim.Graph.getStats().nr_und_edges);
-    //sim.setActivationModel ("step");
-    //sim.Sine = true;
+    sim.Sine = true;
     sim.exec();
-    //console.log(sim.Graph.getNodeById("B").connNodes());
+    sim.setActivationModel ("rlu");
+    sim.exec();
   });
   
 });

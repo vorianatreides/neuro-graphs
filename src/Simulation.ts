@@ -18,6 +18,7 @@ class Simulation {
   private _thresh: number;
   private _c: number;
   private _k: number;
+  private _refr: number;
 
   private activationFunc: (input: number[]) => number[]
 
@@ -39,6 +40,7 @@ class Simulation {
   get Threshold() {return this._thresh;}
   get Amplitude() {return this._c;}
   get Steepness() {return this._k;}
+  get Refraction() {return this._refr;}
 
   //----------------------------------------------------------------------------
   set Noise (noise: boolean) {this._noise = noise;}
@@ -46,6 +48,7 @@ class Simulation {
   set Threshold (thresh: number) {this._thresh = thresh;}
   set Amplitude (amp: number) {this._c = amp;}
   set Steepness (steep: number) {this._k = steep;}
+  set Refraction (refr: number) {this._refr = refr;}
   set Sine (sine: boolean) {
     this._sine = sine;
     if (sine) {
@@ -76,6 +79,7 @@ class Simulation {
     this._thresh = 0.6;
     this._c = 1;
     this._k = 15;
+    this._refr = 5;
 
     let all_nodes = this._graph.getNodes();
     let ctr = 0;
@@ -85,17 +89,7 @@ class Simulation {
     }
 
     this.activationFunc = this.sigmoid;
-    this.generateInVec();
-  }
-  
-  // Private method to generate the initial conditions
-  private generateInVec () {
-    for (let i in this._neuron_list) {
-      //if (Math.random() <= 0.05) {this._neuron_list[i].Activation = this._c * Math.random();}
-      //if (Math.random() <= 0.05) {this._neuron_list[i].Activation = this._neuron_list[i].C * Math.random();}
-      if (this._neuron_list[i].Node.getID() === "A") {this._neuron_list[i].Activation = 0.999999;}
-      if (this._neuron_list[i].Node.getID() === "B") {this._neuron_list[i].Activation = 0.5;}
-    }
+    this.generateInVec(0);
   }
 
   // Private method for the sigmoidal activation function
@@ -126,6 +120,15 @@ class Simulation {
       ans[i] = 2 * this._c / (1 + Math.pow (Math.E, -2 * this._k * input[i])) - 1;
       if (ans[i] >= (this._c - 0.001)) {ans[i] = this._c;}
       else if (ans[i] <= (0.001 - this._c)) {ans[i] = -this._c;}
+    }
+    return ans;
+  }
+
+  // Private method for the rectified linear unit activation function
+  private rlu (input: number[]) {
+    let ans: number[] = [];
+    for (let i in input) {
+      ans[i] = Math.max (0, this._k * input[i]);
     }
     return ans;
   }
@@ -183,8 +186,8 @@ class Simulation {
         let key = this._all_ids[connections[j].node.getID()];
         tmp += connections[j].edge.getWeight() * this._neuron_list[key].Activation;
       }
-      tmp -= this._neuron_list[i].Refraction * this._neuron_list[i].Threshold;
-      if (this._noise) {tmp += Math.pow(Math.random(), 3) * this._neuron_list[i].C;}
+      tmp -= this._neuron_list[i].Refraction * this._thresh;
+      if (this._noise) {tmp += Math.random() * Math.random() * this._c;}
       ans[i] = tmp;
 
       if (this._undirected) {
@@ -194,8 +197,8 @@ class Simulation {
           let key = this._all_ids[connections[j].node.getID()];
           tmp += connections[j].edge.getWeight() * this._neuron_list[key].Activation;
         }
-        tmp -= this._neuron_list[i].Refraction * this._neuron_list[i].Threshold;
-        if (this._noise) {tmp += Math.pow(Math.random(), 3) * this._neuron_list[i].C;}
+        tmp -= this._neuron_list[i].Refraction * this._thresh;
+        if (this._noise) {tmp += Math.random() * Math.random() * this._c;}
         ans[i] += tmp;
       }
     }
@@ -203,23 +206,29 @@ class Simulation {
   }
 
   //----------------------------------------------------------------------------
-  
+
+  // Public method to generate an input vector of activations
+  generateInVec (percentage: number) {
+    for (let i in this._neuron_list) {
+      if (Math.random() <= percentage) {this._neuron_list[i].Activation = this._c * Math.random();}
+    }
+  }
+
   // Public method to calculate one epoch
   calculateEpoch() {
-    // let tmp = this.calcInput();
     let output = this.activationFunc (this.calcInput());
-
     for (let i in this._neuron_list) {
-      this._neuron_list[i].Refraction -= this._neuron_list[i].Refraction !== 1 ? 1 : 0;
-      this._neuron_list[i].Refraction = this._neuron_list[i].Activation >= this._neuron_list[i].Threshold ? 3 : this._neuron_list[i].Refraction;
+      if (this._neuron_list[i].Refraction !== 1) {
+        this._neuron_list[i].Refraction /= 2;
+      }
+      if (this._neuron_list[i].Refraction < 1) {this._neuron_list[i].Refraction = 1;}
+      if (this._neuron_list[i].Activation >= this._thresh) {this._neuron_list[i].Refraction = this._refr;}
       this._neuron_list[i].Activation = output[i];
-      this._neuron_list[i].setColor (this._bounds[0], this._bounds[1]);
     }
-
     return output;
   }
 
-  // Public method to
+  // Public method to set the activation function
   setActivationModel (model: string) {
     switch (model) {
       case "sigmoidal":
@@ -236,7 +245,7 @@ class Simulation {
         break;
       case "rlu":
         this._activation_model = model;
-        //this.activationFunc = this.rlu;
+        this.activationFunc = this.rlu;
         this._bounds[0] = 0;
         this._bounds[1] = Number.POSITIVE_INFINITY;
         break;
@@ -255,9 +264,6 @@ class Simulation {
   // Public method for the simulation itself
   exec (nr_epochs: number = this._graph.getStats().nr_nodes) {
     this.writeEpochsTable (0);
-    for (let j in this._neuron_list) {
-      this._neuron_list[j].setColor (this._bounds[0], this._bounds[1]);
-    }
     for (let i = 0; i < nr_epochs; ++i) {
       this.calculateEpoch();
       this.writeEpochsTable(i+1);
