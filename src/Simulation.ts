@@ -10,8 +10,7 @@ class Simulation {
   private _activation_model: string;
   private _all_ids: {[id: string]: number;}[];
   private _epoch: number;
-  private _sine: boolean;
-  private _noise: boolean;
+  private _n: number;
   private _undirected: boolean;
   private _bounds: number[];
   private _globals: boolean;
@@ -29,8 +28,7 @@ class Simulation {
 
   //----------------------------------------------------------------------------
   get Graph() {return this._graph;}
-  get Sine() {return this._sine;}
-  get Noise() {return this._noise;}
+  get Noise() {return this._n;}
   get ActivationModel() {return this._activation_model;}
   get Epoch() {return this._epoch;}
   get Undirected() {return this._undirected;}
@@ -43,21 +41,12 @@ class Simulation {
   get Refraction() {return this._refr;}
 
   //----------------------------------------------------------------------------
-  set Noise (noise: boolean) {this._noise = noise;}
+  set Noise (noise: number) {this._n = noise;}
   set Globals (globals: boolean) {this._globals = globals;}
   set Threshold (thresh: number) {this._thresh = thresh;}
   set Amplitude (amp: number) {this._c = amp;}
   set Steepness (steep: number) {this._k = steep;}
   set Refraction (refr: number) {this._refr = refr;}
-  set Sine (sine: boolean) {
-    this._sine = sine;
-    if (sine) {
-      this.activationFunc = this.sin;
-      this._bounds[0] = -1;
-      this._bounds[1] = 1;
-    }
-    else {this.setActivationModel (this._activation_model);}
-  }
   set Graph (graph: $G.core.IGraph) {
     this._graph = graph;
     this.setDefaults();
@@ -72,8 +61,7 @@ class Simulation {
     this._bounds = [0, 1];
     this._all_ids = [];
     this._epoch = 0;
-    this._sine = false;
-    this._noise = false; // Should biologically speaking be true!
+    this._n = 0; // Should biologically speaking be more than 0!
     this._undirected = !!this._graph.getStats().nr_und_edges; // Should normally be true
     this._globals = true;
     this._thresh = 0.6;
@@ -187,7 +175,7 @@ class Simulation {
         tmp += connections[j].edge.getWeight() * this._neuron_list[key].Activation;
       }
       tmp -= this._neuron_list[i].Refraction * this._thresh;
-      if (this._noise) {tmp += Math.random() * Math.random() * this._c;}
+      if (!!this._n) {tmp += Math.pow (Math.random(), this._n) * this._c;}
       ans[i] = tmp;
 
       if (this._undirected) {
@@ -198,7 +186,7 @@ class Simulation {
           tmp += connections[j].edge.getWeight() * this._neuron_list[key].Activation;
         }
         tmp -= this._neuron_list[i].Refraction * this._thresh;
-        if (this._noise) {tmp += Math.random() * Math.random() * this._c;}
+        if (!!this._n) {tmp += Math.pow (Math.random(), this._n) * this._c;}
         ans[i] += tmp;
       }
     }
@@ -211,6 +199,7 @@ class Simulation {
   generateInVec (percentage: number) {
     for (let i in this._neuron_list) {
       if (Math.random() <= percentage) {this._neuron_list[i].Activation = this._c * Math.random();}
+      else {this._neuron_list[i].Activation = 0;}
     }
   }
 
@@ -255,10 +244,14 @@ class Simulation {
         this._bounds[0] = 0;
         this._bounds[1] = 1;
         break;
+      case "sin":
+        this._activation_model = model;
+        this.activationFunc = this.sin;
+        this._bounds[0] = -1;
+        this._bounds[1] = 1;
       default:
         throw new Error ("Error! Provided activation model is not implemented yet!");
     }
-    this._sine = false;
   }
 
   // Public method for the simulation itself
