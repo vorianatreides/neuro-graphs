@@ -249,6 +249,7 @@ class Simulation {
         this.activationFunc = this.sin;
         this._bounds[0] = -1;
         this._bounds[1] = 1;
+        break;
       default:
         throw new Error ("Error! Provided activation model is not implemented yet!");
     }

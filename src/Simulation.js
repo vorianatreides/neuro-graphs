@@ -18,26 +18,10 @@ var Simulation = (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(Simulation.prototype, "Sine", {
-        get: function () { return this._sine; },
-        set: function (sine) {
-            this._sine = sine;
-            if (sine) {
-                this.activationFunc = this.sin;
-                this._bounds[0] = -1;
-                this._bounds[1] = 1;
-            }
-            else {
-                this.setActivationModel(this._activation_model);
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
     Object.defineProperty(Simulation.prototype, "Noise", {
-        get: function () { return this._noise; },
+        get: function () { return this._n; },
         //----------------------------------------------------------------------------
-        set: function (noise) { this._noise = noise; },
+        set: function (noise) { this._n = noise; },
         enumerable: true,
         configurable: true
     });
@@ -106,8 +90,7 @@ var Simulation = (function () {
         this._bounds = [0, 1];
         this._all_ids = [];
         this._epoch = 0;
-        this._sine = false;
-        this._noise = false; // Should biologically speaking be true!
+        this._n = 0; // Should biologically speaking be more than 0!
         this._undirected = !!this._graph.getStats().nr_und_edges; // Should normally be true
         this._globals = true;
         this._thresh = 0.6;
@@ -220,8 +203,8 @@ var Simulation = (function () {
                 tmp += connections[j].edge.getWeight() * this._neuron_list[key].Activation;
             }
             tmp -= this._neuron_list[i].Refraction * this._thresh;
-            if (this._noise) {
-                tmp += Math.random() * Math.random() * this._c;
+            if (!!this._n) {
+                tmp += Math.pow(Math.random(), this._n) * this._c;
             }
             ans[i] = tmp;
             if (this._undirected) {
@@ -232,8 +215,8 @@ var Simulation = (function () {
                     tmp += connections[j].edge.getWeight() * this._neuron_list[key].Activation;
                 }
                 tmp -= this._neuron_list[i].Refraction * this._thresh;
-                if (this._noise) {
-                    tmp += Math.random() * Math.random() * this._c;
+                if (!!this._n) {
+                    tmp += Math.pow(Math.random(), this._n) * this._c;
                 }
                 ans[i] += tmp;
             }
@@ -246,6 +229,9 @@ var Simulation = (function () {
         for (var i in this._neuron_list) {
             if (Math.random() <= percentage) {
                 this._neuron_list[i].Activation = this._c * Math.random();
+            }
+            else {
+                this._neuron_list[i].Activation = 0;
             }
         }
     };
@@ -293,10 +279,14 @@ var Simulation = (function () {
                 this._bounds[0] = 0;
                 this._bounds[1] = 1;
                 break;
+            case "sin":
+                this._activation_model = model;
+                this.activationFunc = this.sin;
+                this._bounds[0] = -1;
+                this._bounds[1] = 1;
             default:
                 throw new Error("Error! Provided activation model is not implemented yet!");
         }
-        this._sine = false;
     };
     // Public method for the simulation itself
     Simulation.prototype.exec = function (nr_epochs) {
